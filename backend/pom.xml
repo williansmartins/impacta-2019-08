@@ -8,16 +8,7 @@
   <name>agenda Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-<<<<<<< HEAD
-  
-=======
->>>>>>> 2722f3c9b924dbed577996807a0350633ed3bea4
+
   </dependencies>
   <build>
     <finalName>backend</finalName>
