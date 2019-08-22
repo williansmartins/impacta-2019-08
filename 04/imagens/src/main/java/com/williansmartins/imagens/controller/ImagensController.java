@@ -9,9 +9,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/imagens")
 public class ImagensController {
 
+	@GetMapping("/")
+	public String buscarTudo() {
+		return "Buscando tudo";
+	}
+
 	@GetMapping("/{id}")
-	public String getPerson(@PathVariable Long id) {
-		System.out.println(">>>" + id);
-		return "<<<" + id;
+	public String buscarUm(@PathVariable String id) {
+		return "Buscando imagem com id: " + id;
+	}
+
+	@GetMapping("/atualizar/{id}")
+	public String AtualizarUm(@PathVariable String id) {
+		return "Atualizando o objeto com id: " + id;
+	}
+
+	@GetMapping("/apagar/{id}")
+	public String ApagarUm(@PathVariable String id) {
+		return "Apagando objeto com id: " + id;
+	}
+
+	@GetMapping("/gravar")
+	public String GravarUm(@PathVariable String id) {
+		return "Gravando novo objeto";
 	}
 }
