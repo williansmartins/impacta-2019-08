@@ -1,15 +1,20 @@
 package com.williansmartins.imagens.controller;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.williansmartins.imagens.model.Imagem;
 
 @RestController
 @RequestMapping("/imagens")
 public class ImagensController {
 
-	@GetMapping("/")
+	@GetMapping
 	public String buscarTudo() {
 		return "Buscando tudo";
 	}
@@ -19,18 +24,18 @@ public class ImagensController {
 		return "Buscando imagem com id: " + id;
 	}
 
-	@GetMapping("/atualizar/{id}")
-	public String AtualizarUm(@PathVariable String id) {
-		return "Atualizando o objeto com id: " + id;
-	}
-
-	@GetMapping("/apagar/{id}")
+	@DeleteMapping("/{id}")
 	public String ApagarUm(@PathVariable String id) {
 		return "Apagando objeto com id: " + id;
 	}
 
-	@GetMapping("/gravar")
-	public String GravarUm() {
-		return "Gravando novo objeto";
+	@PostMapping("/{id}")
+	public String GravarUm(Imagem imagem) {
+		return "Gravando uma nova imagem";
+	}
+
+	@PutMapping("/{id}")
+	public String Atualizar(Imagem imagem) {
+		return "Atualizando imagem";
 	}
 }
