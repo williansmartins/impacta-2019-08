@@ -20,8 +20,11 @@ public class ImagensController {
 	}
 
 	@GetMapping("/{id}")
-	public String buscarUm(@PathVariable String id) {
-		return "Buscando imagem com id: " + id;
+	public Imagem buscarUm(@PathVariable String id) {
+		System.out.println("Buscando imagem com id: " + id);
+		Imagem imagem = new Imagem();
+		imagem.setUrl("url nova");
+		return imagem;
 	}
 
 	@DeleteMapping("/{id}")
@@ -31,11 +34,11 @@ public class ImagensController {
 
 	@PostMapping("/{id}")
 	public String GravarUm(Imagem imagem) {
-		return "Gravando uma nova imagem";
+		return "Gravando uma nova imagem" + imagem;
 	}
 
 	@PutMapping("/{id}")
 	public String Atualizar(Imagem imagem) {
-		return "Atualizando imagem";
+		return "Atualizando imagem" + imagem;
 	}
 }

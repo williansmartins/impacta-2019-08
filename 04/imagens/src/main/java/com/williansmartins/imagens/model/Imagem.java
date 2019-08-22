@@ -11,4 +11,9 @@ public class Imagem {
 		this.url = url;
 	}
 
+	@Override
+	public String toString() {
+		return "Imagem [url=" + url + "]";
+	}
+
 }
