@@ -30,7 +30,7 @@ public class ImagensController {
 	}
 
 	@GetMapping("/gravar")
-	public String GravarUm(@PathVariable String id) {
+	public String GravarUm() {
 		return "Gravando novo objeto";
 	}
 }
