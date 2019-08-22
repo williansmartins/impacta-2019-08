@@ -1,4 +1,4 @@
-package com.williansmartins.imagens.controller;
+package com.williansmartins.imagens.Controller;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
