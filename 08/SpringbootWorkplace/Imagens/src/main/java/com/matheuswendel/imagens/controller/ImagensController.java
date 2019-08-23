@@ -1,9 +1,14 @@
 package com.matheuswendel.imagens.controller;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.matheuswendel.imagens.model.Imagem;
 
 @RestController
 @RequestMapping("/imagens")
@@ -25,13 +30,17 @@ public class ImagensController {
 	public String buscarUm(@PathVariable String id) {
 		return "Buscando imagem com id:" + id;
 	}
-	@GetMapping("/excluir")
+	@DeleteMapping("/{id}")
 	public String excluir(@PathVariable String id) {
-		return "Excluindo";
+		return "Excluindo id:" + id;
 	}
-	@GetMapping("/criar")
-	public String Adicionar() {
-		return "Adicionando um:";
+	@PostMapping
+	public String Adicionar( Imagem imagem) {
+		return "Inserindo imagem:";
+	}
+	@PutMapping
+	public String Atualizar( Imagem imagem) {
+		return "atualizando imagem:";
 	}
 	
 
