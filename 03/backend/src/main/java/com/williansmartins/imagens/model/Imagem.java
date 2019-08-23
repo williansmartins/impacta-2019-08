@@ -1,6 +1,7 @@
 package com.williansmartins.imagens.model;
 
 public class Imagem {
+	
 	private String url;
 
 	public String getUrl() {
@@ -10,6 +11,10 @@ public class Imagem {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Imagem [url=" + url + "]";
+	}
+
 }
