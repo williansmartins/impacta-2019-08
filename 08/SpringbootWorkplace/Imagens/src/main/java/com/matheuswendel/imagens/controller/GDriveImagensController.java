@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -105,7 +103,7 @@ public class GDriveImagensController {
 		if (files == null || files.isEmpty()) {
 			System.out.println("No files found.");
 		} else {
-			System.out.println("Files:");
+			System.out.println("Files: ");
 
 			for (File file : files) {
 				//imprime no console os nomes e ID's dos arquivos
