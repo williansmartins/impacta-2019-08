@@ -14,7 +14,7 @@ public class Imagem {
 
 	@Override
 	public String toString() {
-		return "Imagem [url= " + url + "]";
+		return "Imagem [url=" + url + "]";
 	}
 
 }

@@ -20,41 +20,13 @@ import com.williansmartins.imagens.model.Imagem;
 public class AlbunsController {
 
 	@GetMapping
-	public List<Album> buscarTodos() {
-
-		List<Album> albuns = new ArrayList<Album>();
-
-		Album alb1 = new Album();
-		alb1.setId(1);
-		alb1.setNome("1");
-		alb1.setImagens(null);
-		Album alb2 = new Album();
-		alb2.setId(2);
-		alb2.setNome("2");
-		alb2.setImagens(null);
-		Album alb3 = new Album();
-		alb3.setId(3);
-		alb3.setNome("3");
-		alb3.setImagens(null);
-		Album alb4 = new Album();
-		alb4.setId(4);
-		alb4.setNome("4");
-		alb4.setImagens(null);
-
-		albuns.add(alb1);
-		albuns.add(alb2);
-		albuns.add(alb3);
-		albuns.add(alb4);
-
-		return albuns;
+	public List<Album> buscarTudo() {
+		return null;
 	}
 
 	@GetMapping("/{id}")
 	public Album buscarUm(@PathVariable String id) {
-		System.out.println("Buscando imagem com id: " + id);
-
-//		REMOVER
-
+		System.out.println("buscando album com id: " + id);
 		Album album = new Album();
 		album.setId(123);
 		album.setNome("Familia");
@@ -67,38 +39,30 @@ public class AlbunsController {
 		img3.setUrl("http://www.site3.com.br");
 
 		List<Imagem> imagens = new ArrayList<Imagem>();
+		imagens.add(img1);
+		imagens.add(img2);
+		imagens.add(img3);
+
+		album.setImagens(imagens);
+
+		// Album album2 = album;
+		// Album album3 = album;
 
 		return album;
 	}
 
 	@DeleteMapping("/{id}")
-	public Album ApagarUm(@PathVariable String id) {
-
-		Album album = new Album();
-
-		album.setId(1);
-		album.setImagens(null);
-		album.setNome("Album apagado");
-
-		return album;
+	public String removerUm(@PathVariable String id) {
+		return "removendo album com id: " + id;
 	}
 
 	@PostMapping
-	public Album GravarUm(@RequestBody Album imagem) {
-
-		Album album = new Album();
-
-		album.setId(1);
-		album.setImagens(null);
-		album.setNome("Album adicionado");
-
-		return album;
+	public String inserir(@RequestBody Album album) {
+		return "inserindo album" + album;
 	}
 
 	@PutMapping("/{id}")
-	public Album Atualizar(@PathVariable int id, @RequestBody Album album) {
-
-		album.setId(id);
-		return album;
+	public String atualizar(Album album) {
+		return "atualizando album" + album;
 	}
 }
