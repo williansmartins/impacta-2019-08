@@ -19,7 +19,8 @@ public class ImagensDAO {
 	private List<Customer> lista = new ArrayList<>();
 	
 	public Customer buscarCustomer(int id) {
-	try {
+		Customer customer = new Customer();
+		try {
 			
 			System.out.println("Conectando...");
 			Connection con = DriverManager.getConnection(url,user, password);
@@ -29,25 +30,19 @@ public class ImagensDAO {
 			String sql = "select * from customer WHERE customer_id ="+id;
 			ResultSet resultSet = statement.executeQuery(sql);
 			
-			while (resultSet.next()) {
+			if (resultSet.next()) {
 				System.out.println(">>" + resultSet.getString("first_name"));
-				
-				Customer customer = new Customer();
 				customer.setNome(resultSet.getString("first_name"));
 				customer.setSobrenome(resultSet.getString("last_name"));
 				customer.setId(resultSet.getInt("customer_id"));
-				customer.setEmail(resultSet.getString("email"));
-				
-				lista.add(customer );
+				customer.setEmail(resultSet.getString("email"));			
 			}
-			
-			
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return lista.get(0);
+		return customer;
 	}
 	
 	public List<Customer> buscarCustomers() {
