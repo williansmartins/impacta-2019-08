@@ -24,7 +24,7 @@ public class ImagensController {
 	public Imagem buscarUm(@PathVariable String id) {
 		System.out.println("Buscando imagem com id: " + id);
 		Imagem imagem = new Imagem();
-		imagem.setUrl("url nova");
+		
 		return imagem;
 	}
 
@@ -33,13 +33,13 @@ public class ImagensController {
 		return "Apagando objeto com id: " + id;
 	}
 
-	@PostMapping("/{id}")
+	@PostMapping
 	public String GravarUm(@RequestBody Imagem imagem) {
-		return "Gravando uma nova imagem" + imagem;
+		return "Gravando uma nova imagem " + imagem;
 	}
 
 	@PutMapping("/{id}")
 	public String Atualizar(Imagem imagem) {
-		return "Atualizando imagem" + imagem;
+		return "Atualizando imagem " + imagem;
 	}
 }

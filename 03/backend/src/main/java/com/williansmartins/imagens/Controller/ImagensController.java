@@ -14,32 +14,32 @@ import com.williansmartins.imagens.model.Imagem;
 @RestController
 @RequestMapping("/imagens")
 public class ImagensController {
-
+	
 	@GetMapping
-	public String buscarTudo() {
-		return "Buscando tudo";
-	}
-
+    public String buscarTudo() {
+        return "buscando tudo";
+    }
+	
 	@GetMapping("/{id}")
-	public Imagem buscarUm(@PathVariable String id) {
-		System.out.println("Buscando imagem com id: " + id);
-		Imagem imagem = new Imagem();
-		
+    public Imagem buscarUm(@PathVariable String id) {
+        System.out.println("buscando imagem com id: " + id);
+        Imagem imagem = new Imagem();
+        imagem.setUrl("url nova");
 		return imagem;
-	}
-
+    }
+	
 	@DeleteMapping("/{id}")
-	public String ApagarUm(@PathVariable String id) {
-		return "Apagando objeto com id: " + id;
-	}
-
+    public String removerUm(@PathVariable String id) {
+        return "removendo imagem com id: " + id;
+    }
+	
 	@PostMapping
-	public String GravarUm(@RequestBody Imagem imagem) {
-		return "Gravando uma nova imagem " + imagem;
-	}
-
+    public String inserir(@RequestBody Imagem imagem) {
+        return "inserindo imagem" + imagem;
+    }
+	
 	@PutMapping("/{id}")
-	public String Atualizar(Imagem imagem) {
-		return "Atualizando imagem " + imagem;
-	}
+    public String atualizar(Imagem imagem) {
+        return "atualizando imagem" + imagem;
+    }
 }
