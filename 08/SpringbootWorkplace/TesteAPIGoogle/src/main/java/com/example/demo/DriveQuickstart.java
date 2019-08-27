@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -94,6 +95,7 @@ public class DriveQuickstart {
         // Print the names and IDs for up to 10 files.
         FileList result = service.files().list().setPageSize(10).setFields("nextPageToken, files(id, name)").execute();
         List<File> files = result.getFiles();
+        List<String> idImagensjpg = new ArrayList();
         
         
         if (files == null || files.isEmpty()) {
@@ -104,6 +106,9 @@ public class DriveQuickstart {
             
             for (File file : files) {
                 System.out.printf("%s (%s)\n", file.getName(), file.getId());
+                if(file.getName().substring(file.getName().length()-4).equals(".jpg"))
+                	System.out.println("iso eh uma imagem");
+                
             }
         }
         

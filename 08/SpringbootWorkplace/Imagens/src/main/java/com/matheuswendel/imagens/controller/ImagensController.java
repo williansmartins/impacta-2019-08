@@ -25,9 +25,14 @@ public class ImagensController {
 	@GetMapping("/")
 	public String buscarTudo() {
 		return "buscando Tudo";
+		
+		
 	}
 	@GetMapping("/{id}")
 	public String buscarUm(@PathVariable String id) {
+	
+		
+		
 		return "Buscando imagem com id:" + id;
 	}
 	@DeleteMapping("/{id}")
