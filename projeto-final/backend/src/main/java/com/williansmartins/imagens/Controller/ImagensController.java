@@ -1,5 +1,7 @@
 package com.williansmartins.imagens.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.williansmartins.imagens.dao.ImagensDAO;
+import com.williansmartins.imagens.model.Customer;
 import com.williansmartins.imagens.model.Imagem;
 
 @RestController
@@ -16,16 +20,18 @@ import com.williansmartins.imagens.model.Imagem;
 public class ImagensController {
 	
 	@GetMapping
-    public String buscarTudo() {
-        return "buscando tudo";
+    public List<Customer> buscarTudo() {
+		ImagensDAO dao = new ImagensDAO();
+        return dao.buscarCustomers();
     }
 	
 	@GetMapping("/{id}")
-    public Imagem buscarUm(@PathVariable String id) {
+    public Customer buscarUm(@PathVariable String id) {
         System.out.println("buscando imagem com id: " + id);
-        Imagem imagem = new Imagem();
-        imagem.setUrl("url nova");
-		return imagem;
+       ImagensDAO dao = new ImagensDAO();
+       
+       int idParafuncao = Integer.parseInt(id);
+		return dao.buscarCustomer(idParafuncao);
     }
 	
 	@DeleteMapping("/{id}")
