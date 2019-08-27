@@ -31,7 +31,7 @@ public class ImagensController {
 		}
 			
 		@PutMapping("/{id}")
-		public String atualizandoUm(Imagem imagem) {
+		public String atualizandoUm(@RequestBody Imagem imagem) {
 			return "Atualizando imagem";
 		}
 		
