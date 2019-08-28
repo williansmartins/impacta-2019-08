@@ -21,7 +21,7 @@ import com.williansmartins.imagens.model.Imagem;
 public class AlbunsController {
 
 	@GetMapping
-	public List<Customer>buscarTudo() {
+	public List<Imagem>buscarTudo() {
 		ImagensDAO dao = new ImagensDAO();
 		return null;
 	}
