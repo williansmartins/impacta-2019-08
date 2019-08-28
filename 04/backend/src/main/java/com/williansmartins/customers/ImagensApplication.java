@@ -1,4 +1,4 @@
-package com.williansmartins.imagens;
+package com.williansmartins.customers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

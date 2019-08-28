@@ -1,19 +1,11 @@
-package com.williansmartins.imagens.model;
+package com.williansmartins.customers.model;
 
 public class Customer {
-
 	private int id;
 	private String nome;
 	private String sobrenome;
+	private String nomeCompleto;
 	private String email;
-
-	public Customer(int id, String nome, String sobrenome, String email) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.email = email;
-	}
 
 	public int getId() {
 		return id;
@@ -39,6 +31,14 @@ public class Customer {
 		this.sobrenome = sobrenome;
 	}
 
+	public String getNomeCompleto() {
+		return nome + " " + sobrenome;
+	}
+
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -46,10 +46,12 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String toString() {
-		return "Customer [id= " + id + ", nome= " + nome +" "+ sobrenome + ", email= " + email + "]";
-	}
 	
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", nomeCompleto=" + nomeCompleto
+				+ ", email=" + email + "]";
+	}
 
 }

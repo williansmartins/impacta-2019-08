@@ -1,4 +1,4 @@
-package com.williansmartins.imagens.model;
+package com.williansmartins.customers.model;
 
 public class Imagem {
 	
@@ -14,7 +14,7 @@ public class Imagem {
 
 	@Override
 	public String toString() {
-		return "Imagem [url= " + url + "]";
+		return "Imagem [url=" + url + "]";
 	}
 
 }
