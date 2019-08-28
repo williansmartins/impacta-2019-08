@@ -10,11 +10,10 @@ import java.util.List;
 
 import com.williansmartins.imagens.model.Customer;
 
-public class ImagensDAO {
+public class CustomersDAO {
 	private final String url = "jdbc:mysql://localhost/sakila?useTimezone=true&serverTimezone=UTC";
 	private final String user = "root";
 	private final String password = "Imp@ct@";
-	
 	
 	private List<Customer> lista = new ArrayList<>();
 	
@@ -29,6 +28,8 @@ public class ImagensDAO {
 			Statement statement = con.createStatement();
 			String sql = "select * from customer WHERE customer_id ="+id;
 			ResultSet resultSet = statement.executeQuery(sql);
+			
+			System.out.println(2^3);
 			
 			if (resultSet.next()) {
 				System.out.println(">>" + resultSet.getString("first_name"));
