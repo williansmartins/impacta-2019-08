@@ -1,6 +1,5 @@
-package com.williansmartins.imagens.Controller;
+package com.williansmartins.imagens.controller;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.williansmartins.imagens.dao.ImagensDAO;
 import com.williansmartins.imagens.model.Album;
-import com.williansmartins.imagens.model.Customer;
 import com.williansmartins.imagens.model.Imagem;
 
 @RestController
@@ -25,7 +23,7 @@ public class AlbunsController {
 	@GetMapping
 	public List<Customer>buscarTudo() {
 		ImagensDAO dao = new ImagensDAO();
-		return dao.buscarTodos();
+		return null;
 	}
 
 	@GetMapping("/{id}")

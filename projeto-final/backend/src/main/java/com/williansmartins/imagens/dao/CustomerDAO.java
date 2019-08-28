@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.util.List;
 
-import com.williansmartins.imagens.model.Customer;
+import com.williansmartins.imagens.controller.Customer;
 
 public class CustomerDAO {
 	
@@ -42,6 +42,11 @@ public class CustomerDAO {
 		}
 		
 		return customer;
+	}
+
+	public List<Customer> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	 
