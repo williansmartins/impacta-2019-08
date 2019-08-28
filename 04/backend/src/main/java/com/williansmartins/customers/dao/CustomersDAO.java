@@ -111,7 +111,7 @@ public class CustomersDAO {
 			System.out.println("Conectado com sucesso!");
 
 			Statement statement = con.createStatement();
-			String sql = "delete * from customer WHERE customer_id ="+id;
+			String sql = "delete from customer WHERE customer_id ="+id;
 			
 			System.out.println("Customer deletado");
 			
