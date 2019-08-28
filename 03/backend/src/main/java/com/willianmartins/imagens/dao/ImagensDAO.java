@@ -1,4 +1,4 @@
-package com.williansmartins.imagens.dao;
+package com.willianmartins.imagens.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,8 +19,7 @@ public class ImagensDAO {
 	private List<Customer> lista = new ArrayList<>();
 	
 	public Customer buscarCustomer(int id) {
-		Customer customer = new Customer();
-		try {
+	try {
 			
 			System.out.println("Conectando...");
 			Connection con = DriverManager.getConnection(url,user, password);
@@ -30,19 +29,25 @@ public class ImagensDAO {
 			String sql = "select * from customer WHERE customer_id ="+id;
 			ResultSet resultSet = statement.executeQuery(sql);
 			
-			if (resultSet.next()) {
+			while (resultSet.next()) {
 				System.out.println(">>" + resultSet.getString("first_name"));
+				
+				Customer customer = new Customer();
 				customer.setNome(resultSet.getString("first_name"));
 				customer.setSobrenome(resultSet.getString("last_name"));
 				customer.setId(resultSet.getInt("customer_id"));
-				customer.setEmail(resultSet.getString("email"));			
+				customer.setEmail(resultSet.getString("email"));
+				
+				lista.add(customer );
 			}
+			
+			
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return customer;
+		return lista.get(0);
 	}
 	
 	public List<Customer> buscarCustomers() {
@@ -78,3 +83,4 @@ public class ImagensDAO {
 	}
 	
 }
+
