@@ -1,4 +1,4 @@
-package com.williansmartins.imagens.controller;
+package com.williansmartins.customers.controller;
 
 import java.util.List;
 
@@ -11,27 +11,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.williansmartins.imagens.dao.ImagensDAO;
-import com.williansmartins.imagens.model.Customer;
-import com.williansmartins.imagens.model.Imagem;
+import com.williansmartins.customers.dao.CustomersDAO;
+import com.williansmartins.customers.model.Customer;
+import com.williansmartins.customers.model.Imagem;
 
 @RestController
-@RequestMapping("/imagens")
-public class ImagensController {
+@RequestMapping("/customers")
+public class CustomerController {
 	
 	@GetMapping
     public List<Customer> buscarTudo() {
-		ImagensDAO dao = new ImagensDAO();
+		CustomersDAO dao = new CustomersDAO();
         return dao.buscarCustomers();
     }
 	
 	@GetMapping("/{id}")
     public Customer buscarUm(@PathVariable String id) {
         System.out.println("buscando imagem com id: " + id);
-       ImagensDAO dao = new ImagensDAO();
+       CustomersDAO dao = new CustomersDAO();
        
-       int idParafuncao = Integer.parseInt(id);
-		return dao.buscarCustomer(idParafuncao);
+       int idParaFuncao = Integer.parseInt(id);
+		return dao.buscarCustomer(idParaFuncao);
     }
 	
 	@DeleteMapping("/{id}")
@@ -45,7 +45,13 @@ public class ImagensController {
     }
 	
 	@PutMapping("/{id}")
-    public String atualizar(Imagem imagem) {
-        return "atualizando imagem" + imagem;
+    public Customer atualizar(@PathVariable String id) {
+		
+        System.out.println("Atualizando customer com id: " + id);
+       CustomersDAO dao = new CustomersDAO();
+       
+       int idParaFuncao = Integer.parseInt(id);
+		
+        return dao.atualizarCustomer(idParaFuncao) ;
     }
 }

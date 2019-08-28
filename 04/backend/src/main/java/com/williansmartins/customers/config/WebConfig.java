@@ -1,4 +1,4 @@
-package com.williansmartins.imagens.config;
+package com.williansmartins.customers.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

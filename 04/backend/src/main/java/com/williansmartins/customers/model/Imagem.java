@@ -1,4 +1,4 @@
-package com.williansmartins.imagens.model;
+package com.williansmartins.customers.model;
 
 public class Imagem {
 	
