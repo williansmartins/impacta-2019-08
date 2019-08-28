@@ -1,4 +1,6 @@
-package com.williansmartins.imagens.controller;
+package com.williansmartins.imagens.Controller;
+
+import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.williansmartins.imagens.dao.ImagensDAO;
+import com.williansmartins.imagens.model.Customer;
 import com.williansmartins.imagens.model.Imagem;
 
 @RestController
@@ -16,9 +20,10 @@ import com.williansmartins.imagens.model.Imagem;
 public class ImagensController {
 	
 	@GetMapping
-    public String buscarTudo() {
-        return "buscando tudo";
-    }
+	public List<Customer>buscarTudo() {
+		ImagensDAO dao = new ImagensDAO();
+		return dao.buscarTodos();
+	}
 	
 	@GetMapping("/{id}")
     public Imagem buscarUm(@PathVariable String id) {

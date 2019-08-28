@@ -1,0 +1,33 @@
+package com.williansmartins.imagens.Controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.williansmartins.imagens.dao.CustomerDAO;
+import com.williansmartins.imagens.dao.ImagensDAO;
+import com.williansmartins.imagens.model.Album;
+import com.williansmartins.imagens.model.Customer;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerController {
+	
+	@GetMapping
+	public List<Customer>buscarTudo() {
+		CustomerDAO dao = new CustomerDAO();
+		return dao.buscarTodos();
+	}
+	
+	@GetMapping("/{id}")
+	public Customer buscarUm(@PathVariable int id) {
+		CustomerDAO dao = new CustomerDAO();
+		return dao.buscarCustomer(id);
+		
+	}
+
+
+}
