@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.williansmartins.imagens.model.Customer;
 
-public class ImagensDAO {
+public class CustomerDAO {
 	private final String url = "jdbc:mysql://localhost/sakila?useTimezone=true&serverTimezone=UTC";
 	private final String user = "root";
 	private final String password = "Imp@ct@";
