@@ -2,10 +2,19 @@ package com.williansmartins.imagens.model;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Album {
 
+	@Id @GeneratedValue
 	private int id;
 	private String nome;
+	
+	@OneToMany
 	private List<Imagem> imagens;
 
 	public int getId() {
