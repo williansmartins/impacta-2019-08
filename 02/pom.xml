@@ -45,13 +45,12 @@
 </dependency>
 		
 		
-=======
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			</dependency>
->>>>>>> f06afe7488034c40ac359e598253dd136ae4d880
+ <dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+    </dependency>
+</dependencies>
 	</dependencies>
 
 	<build>
