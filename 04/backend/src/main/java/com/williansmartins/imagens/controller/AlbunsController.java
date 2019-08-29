@@ -59,8 +59,7 @@ public class AlbunsController {
 
 		if (repository.existsById(id)) {
 			album.setId(id);
-			repository.save(album);
-			return album;
+			return repository.save(album);
 		} else {
 
 			return new Album();
@@ -75,8 +74,7 @@ public class AlbunsController {
 			albumTemp.getImagens().add(imagem);
 
 			albumTemp.setId(id);
-			repository.save(albumTemp);
-			return albumTemp;
+			return repository.save(albumTemp);
 		} else {
 
 			return new Album();
