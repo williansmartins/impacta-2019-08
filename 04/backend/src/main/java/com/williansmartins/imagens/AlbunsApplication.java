@@ -1,13 +1,13 @@
-package com.williansmartins.customers;
+package com.williansmartins.imagens;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ImagensApplication {
+public class AlbunsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ImagensApplication.class, args);
+		SpringApplication.run(AlbunsApplication.class, args);
 	}
 
 }
