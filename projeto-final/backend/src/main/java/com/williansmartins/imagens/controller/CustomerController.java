@@ -1,4 +1,4 @@
-package com.williansmartins.imagens.Controller;
+package com.williansmartins.imagens.controller;
 
 import java.util.List;
 
@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.williansmartins.imagens.dao.CustomerDAO;
-import com.williansmartins.imagens.dao.ImagensDAO;
-import com.williansmartins.imagens.model.Album;
-import com.williansmartins.imagens.model.Customer;
 
 @RestController
 @RequestMapping("/customer")

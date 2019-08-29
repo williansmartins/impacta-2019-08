@@ -41,23 +41,6 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.17</version>
 		</dependency>
-<<<<<<< HEAD
-		 
-    <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
- 
-=======
-		
-		<!--
-		<dependency> 
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-devtools</artifactId>
-		    <version>1.3.0.RELEASE</version>
-		</dependency> -->
->>>>>>> 8456cae5f53bf3774ce042be2c8118f8d4b916f1
 				
 	</dependencies>
 

@@ -1,6 +1,4 @@
-package com.williansmartins.imagens.Controller;
-
-import java.util.List;
+package com.williansmartins.imagens.controller;
 
 import java.util.List;
 
@@ -14,13 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
+import com.williansmartins.imagens.dao.CustomerDAO;
 import com.williansmartins.imagens.dao.ImagensDAO;
-=======
-import com.williansmartins.imagens.dao.CustomersDAO;
 import com.williansmartins.imagens.model.Book;
->>>>>>> 8456cae5f53bf3774ce042be2c8118f8d4b916f1
-import com.williansmartins.imagens.model.Customer;
 import com.williansmartins.imagens.model.Imagem;
 import com.williansmartins.imagens.repository.BookRepository;
 
@@ -32,22 +26,15 @@ public class ImagensController {
     private BookRepository repository;
 	
 	@GetMapping
-<<<<<<< HEAD
 	public List<Customer>buscarTudo() {
 		ImagensDAO dao = new ImagensDAO();
-		return dao.buscarTodos();
+		return null;
 	}
-=======
-    public List<Customer> buscarTudo() {
-		CustomersDAO dao = new CustomersDAO();
-        return dao.buscarCustomers();
-    }
->>>>>>> 8456cae5f53bf3774ce042be2c8118f8d4b916f1
 	
 	@GetMapping("/{id}")
     public Customer buscarUm(@PathVariable String id) {
         System.out.println("buscando imagem com id: " + id);
-       CustomersDAO dao = new CustomersDAO();
+       CustomerDAO dao = new CustomerDAO();
        
        int idParafuncao = Integer.parseInt(id);
 		return dao.buscarCustomer(idParafuncao);
