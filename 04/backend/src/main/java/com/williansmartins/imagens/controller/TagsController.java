@@ -1,3 +1,4 @@
+
 package com.williansmartins.imagens.controller;
 
 import java.util.Optional;
@@ -13,23 +14,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.williansmartins.imagens.model.Imagem;
-import com.williansmartins.imagens.repository.ImagensRepository;
+import com.williansmartins.imagens.model.Tag;
+import com.williansmartins.imagens.repository.TagsRepository;
 
 @RestController
-@RequestMapping("/imagens")
 
-public class ImagensController {
+@RequestMapping("/tags")
+
+public class TagsController {
 
 	@Autowired
-	private ImagensRepository repository;
+	private TagsRepository repository;
 
 	@GetMapping
-	public Iterable<Imagem> buscarTudo() {
+	public Iterable<Tag> buscarTudo() {
 		return repository.findAll();
 	}
 
 	@GetMapping("/{id}")
-	public Optional<Imagem> buscarUm(@PathVariable Long id) {
+	public Optional<Tag> buscarUm(@PathVariable Long id) {
 		return repository.findById(id);
 	}
 
@@ -46,20 +49,35 @@ public class ImagensController {
 	}
 
 	@PostMapping
-	public Imagem inserir(@RequestBody Imagem imagem) {
-		return repository.save(imagem);
+	public Tag inserir(@RequestBody Tag tag) {
+		return repository.save(tag);
 	}
 
 	@PutMapping("/{id}")
-	public Imagem atualizar(@RequestBody Imagem imagem, @PathVariable Long id) {
+	public Tag atualizar(@RequestBody Tag tag, @PathVariable Long id) {
 
 		if (repository.existsById(id)) {
-			imagem.setId(id);
-			repository.save(imagem);
-			return imagem;
+			tag.setId(id);
+			return repository.save(tag);
 		} else {
 
-			return new Imagem();
+			return new Tag();
 		}
+	}
+
+	@PutMapping("/{id}/adicionar")
+	public Tag adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
+		if (repository.existsById(id)) {
+			Tag tagTemp = repository.findById(id).get();
+
+			tagTemp.getImagens().add(imagem);
+
+			tagTemp.setId(id);
+			return repository.save(tagTemp);
+		} else {
+
+			return new Tag();
+		}
+
 	}
 }
