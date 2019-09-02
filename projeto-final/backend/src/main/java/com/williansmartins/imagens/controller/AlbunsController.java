@@ -63,4 +63,9 @@ public class AlbunsController {
 			return new Album();
 		}
 	}
+	
+	@PutMapping("/{id}/adicionar")
+	public Album adicionar(@RequestBody Album album, @PathVariable Long id) {
+		return null;
+	}
 }
