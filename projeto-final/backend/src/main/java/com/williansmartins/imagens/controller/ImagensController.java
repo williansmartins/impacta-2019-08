@@ -18,40 +18,45 @@ import com.williansmartins.imagens.repository.ImagensRepository;
 @RestController
 @RequestMapping("/imagens")
 public class ImagensController {
-	
+
 	@Autowired
-    private ImagensRepository repository;
-	
+	private ImagensRepository repository;
+
 	@GetMapping
-	public Iterable<Imagem>buscarTudo() {
+	public Iterable<Imagem> buscarTudo() {
 		return repository.findAll();
 	}
-	
+
 	@GetMapping("/{id}")
-    public Optional<Imagem> buscarUm(@PathVariable String id) {
-       return repository.findById(Long.parseLong(id));
-    }
-	
+	public Optional<Imagem> buscarUm(@PathVariable Long id) {
+		System.out.println("buscando imagem com id: " + id);
+		return repository.findById(id);
+	}
+
 	@DeleteMapping("/{id}")
-    public String removerUm(@PathVariable String id) {
+	public String removerUm(@PathVariable Long id) {
 		try {
-			repository.deleteById(Long.parseLong(id));
-			return "ok"; 
+			repository.deleteById(id);
+			return "ok";
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "nok";
 		}
-    }
-	
+	}
+
 	@PostMapping
-    public Imagem inserir(@RequestBody Imagem imagem) {
-		Imagem imagemNoBanco = repository.save(imagem);
-        return imagemNoBanco;
-    }
-	
+	public Imagem inserir(@RequestBody Imagem imagem) {
+		return repository.save(imagem);
+	}
+
 	@PutMapping("/{id}")
-    public Imagem atualizar(@RequestBody Imagem imagem, @PathVariable String id) {
-		imagem.setId(Long.parseLong(id));
-		Imagem imagem2 = repository.save(imagem);
-        return imagem2;
-    }
+	public Imagem atualizar(@RequestBody Imagem imagem, @PathVariable Long id) {
+		
+		if(repository.existsById(id)) {
+			imagem.setId(id);
+			return repository.save(imagem);
+		}else {
+			return new Imagem();
+		}
+	}
 }
