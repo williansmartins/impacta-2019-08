@@ -14,24 +14,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.williansmartins.imagens.model.Album;
 import com.williansmartins.imagens.model.Imagem;
-import com.williansmartins.imagens.repository.AlbunsRepository;
+import com.williansmartins.imagens.model.Tag;
+import com.williansmartins.imagens.repository.TagsRepository;
 
 @RestController
-@RequestMapping("/albuns")
+@RequestMapping("/tags")
 
-public class AlbunsController {
+public class TagsController {
 
 	@Autowired
-	private AlbunsRepository repository;
+	private TagsRepository repository;
 
 	@GetMapping
-	public Iterable<Album> buscarTudo() {
+	public Iterable<Tag> buscarTudo() {
 		return repository.findAll();
 
 	}
 
 	@GetMapping("/{id}")
-	public Optional<Album> buscarUm(@PathVariable Long id) {
+	public Optional<Tag> buscarUm(@PathVariable Long id) {
 		return repository.findById(id);
 	}
 
@@ -47,34 +48,34 @@ public class AlbunsController {
 	}
 
 	@PostMapping
-	public Album inserir(@RequestBody Album album) {
-		return repository.save(album);
+	public Tag inserir(@RequestBody Tag tag) {
+		return repository.save(tag);
 
 	}
 
 	@PutMapping("/{id}")
-	public Album atualizar(@RequestBody Album album, @PathVariable Long id) {
+	public Tag atualizar(@RequestBody Tag tag, @PathVariable Long id) {
 
 		if (repository.existsById(id)) {
-			album.setId(id);
-			return repository.save(album);
+			tag.setId(id);
+			return repository.save(tag);
 		} else {
-			return new Album();
+			return new Tag();
 		}
 		
 		
 	}
 	
 	@PutMapping("/{id}/adicionar")
-	public Album adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
+	public Tag adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
 		if (repository.existsById(id)) {
-			Album albumTemp = repository.findById(id). get();
+			Tag tagTemp = repository.findById(id). get();
 	 
-			albumTemp.getImagens().add(imagem);
-			albumTemp.setId(id);
-			return repository.save(albumTemp);
+			tagTemp.getImagens().add(imagem);
+			tagTemp.setId(id);
+			return repository.save(tagTemp);
 		} else {
-			return new Album();
+			return new Tag();
 		}
 		
 		
