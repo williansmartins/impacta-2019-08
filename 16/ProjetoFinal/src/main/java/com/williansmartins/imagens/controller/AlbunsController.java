@@ -12,28 +12,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.williansmartins.imagens.model.Album;
 import com.williansmartins.imagens.model.Imagem;
-import com.williansmartins.imagens.repository.ImagensRepository;
+import com.williansmartins.imagens.repository.AlbumRepository;
 
 @RestController
-@RequestMapping("/imagens")
-public class ImagensController {
-	
+@RequestMapping("/albuns")
+public class AlbunsController {
+
 	@Autowired
-    private ImagensRepository repository;
+    private AlbumRepository repository;
 	
 	@GetMapping
-	public Iterable<Imagem> buscarTudo() {
+	public Iterable<Album> buscarTudo() {
 		return repository.findAll();
-		
 	}
-	
+
 	@GetMapping("/{id}")
-    public Optional<Imagem> buscarUm(@PathVariable Long id) {
-        System.out.println("buscando imagem com id: " + id);
+	public Optional<Album> buscarUm(@PathVariable Long id) {
+        System.out.println("buscando Album com id: " + id);
       return repository.findById(id);
-    }
-	
+ 
+	}
+
 	@DeleteMapping("/{id}")
     public String removerUm(@PathVariable Long id) {	
 		
@@ -46,23 +47,39 @@ public class ImagensController {
 		}
 	
     }
-	
+
 	@PostMapping
-    public Imagem inserir(@RequestBody Imagem imagem) {
-		return repository.save(new Imagem(null, "Imagem"));
+	 public Album inserir(@RequestBody Album album) {
+		return repository.save(album);
        
     }
-	
-	@PutMapping("/{id}")
-    public Imagem atualizar(@RequestBody Imagem imagem, @PathVariable Long id) {
+
+	@PutMapping("/{id}/")
+	  public Album atualizar(@RequestBody Album album, @PathVariable Long id) {
 		
-		if(repository.existsById(id)) {
-			imagem.setId(id);
-			return repository.save(imagem);	
-		}else {
-			return new Imagem();	
-		}
+			if(repository.existsById(id)) {
+				album.setId(id);
+				return repository.save(album);	
+			}else {
+				return new Album();	
+			}
+	}
+
 	
-       
-    }
+	@PutMapping("/{id}/adicionar")
+	  public Album adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
+		try {	
+		if(repository.existsById(id)) {
+			Album album2 = repository.findById(id).get();
+			
+			album2.getImagens().add(imagem);
+			album2.setId(id);
+			return repository.save(album2);	
+		}else {
+			return new Album();	
+		}
+		}catch(Exception e) {
+			return new Album();
+	}
+	}
 }

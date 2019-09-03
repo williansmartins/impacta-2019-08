@@ -1,11 +1,17 @@
 package com.williansmartins.imagens.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+
+@Entity
 public class Imagem {
 	
+	@Id @GeneratedValue
+	private Long id;
 	private String url;
-	private String userId;
-	private String dataCriacao;
-	
 
 	public String getUrl() {
 		return url;
@@ -14,27 +20,28 @@ public class Imagem {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getDataCriacao() {
-		return dataCriacao;
-	}
-
-	public void setDataCriacao(String dataCriacao) {
-		this.dataCriacao = dataCriacao;
-	}
-
+	
 	@Override
 	public String toString() {
-		return "Imagem [url=" + url + ", userId=" + userId + ", dataCriacao=" + dataCriacao + "]";
+		return "Imagem [id=" + id + ", url=" + url + "]";
 	}
 
+	public Imagem() {
+		
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Imagem(Long id, String url) {
+		super();
+		this.id = id;
+		this.url = url;
+	}
 
 }

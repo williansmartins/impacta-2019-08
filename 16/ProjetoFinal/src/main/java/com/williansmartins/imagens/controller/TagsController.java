@@ -13,26 +13,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.williansmartins.imagens.model.Imagem;
-import com.williansmartins.imagens.repository.ImagensRepository;
+import com.williansmartins.imagens.model.Tags;
+import com.williansmartins.imagens.repository.TagsRepository;
 
 @RestController
-@RequestMapping("/imagens")
-public class ImagensController {
+@RequestMapping("/tags")
+public class TagsController {
 	
 	@Autowired
-    private ImagensRepository repository;
+    private TagsRepository repository;
 	
 	@GetMapping
-	public Iterable<Imagem> buscarTudo() {
+	public Iterable<Tags> buscarTudo() {
 		return repository.findAll();
-		
 	}
-	
+
 	@GetMapping("/{id}")
-    public Optional<Imagem> buscarUm(@PathVariable Long id) {
-        System.out.println("buscando imagem com id: " + id);
+	public Optional<Tags> buscarUm(@PathVariable Long id) {
+        System.out.println("buscando Tags com id: " + id);
       return repository.findById(id);
-    }
+	}
 	
 	@DeleteMapping("/{id}")
     public String removerUm(@PathVariable Long id) {	
@@ -48,21 +48,36 @@ public class ImagensController {
     }
 	
 	@PostMapping
-    public Imagem inserir(@RequestBody Imagem imagem) {
-		return repository.save(new Imagem(null, "Imagem"));
-       
-    }
+	 public Tags inserir(@RequestBody Tags tags) {
+		return repository.save(tags);
+   }
 	
-	@PutMapping("/{id}")
-    public Imagem atualizar(@RequestBody Imagem imagem, @PathVariable Long id) {
+	@PutMapping("/{id}/")
+	  public Tags atualizar(@RequestBody Tags tags, @PathVariable Long id) {
 		
+			if(repository.existsById(id)) {
+				tags.setId(id);
+				return repository.save(tags);	
+			}else {
+				return new Tags();	
+			}
+	}
+
+	@PutMapping("/{id}/adicionar")
+	  public Tags adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
+		try {	
 		if(repository.existsById(id)) {
-			imagem.setId(id);
-			return repository.save(imagem);	
+			Tags tags2 = repository.findById(id).get();
+			
+			tags2.getImagens().add(imagem);
+			tags2.setId(id);
+			return repository.save(tags2);	
 		}else {
-			return new Imagem();	
+			return new Tags();	
 		}
+		}catch(Exception e) {
+			return new Tags();
+	}
+	}
 	
-       
-    }
 }
