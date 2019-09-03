@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.williansmartins.imagens.model.Album;
+import com.williansmartins.imagens.model.Imagem;
 import com.williansmartins.imagens.repository.AlbunsRepository;
 
 @RestController
@@ -50,7 +51,6 @@ public class AlbunsController {
 	@PostMapping
 	public Album inserir(@RequestBody Album album) {
 		return repository.save(album);
-		
 	}
 
 	@PutMapping("/{id}")
@@ -61,5 +61,23 @@ public class AlbunsController {
 		} else {
 			return new Album();
 		}
+	}
+
+	@PutMapping("/{id}/adicionar")
+	public Album adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
+		try {
+			if (repository.existsById(id)) {
+			Album album2 = repository.findById(id).get();
+			album2.getImagens().add(imagem);
+			
+			return repository.save(album2);
+			} else {
+				return new Album();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new Album();
+		}
+		
 	}
 }
