@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(255,172,255);
+}
+
+
+#menu {
+    background-color: purple;
+    height: 90px;
+}
+
+#content {
+  
+}
+
+article {
+    width: 200px;
+    height: 50px;
+    outline: solid 1px gray;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+    
+}
