@@ -1,0 +1,31 @@
+#menu{
+    background-color: blueviolet;
+    height: 50px;
+    color: aliceblue
+}
+body{
+    background-color: rgb(255, 255, 255)
+}
+
+article{
+    width: 200px;
+    height: 42px;
+    outline: solid 1px gray;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+    position: relative;
+}
+hr{
+    margin-inline-start: 50px;
+    display: inline;
+}
+article img{
+   margin-right: 5px;
+
+}
+.titulo{
+    position: absolute;
+    color: black
+}

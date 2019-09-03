@@ -1,26 +1,56 @@
-
 body{
-background-color: azure;
-
+    background-color: white;
+}
+#menu {
+    background-color: rgb(73, 8, 116);
+    height: 50px;
+    color: white;
+}
+#albuns {
+    overflow: hidden;
 }
 
-#menu{
-    background-color: cornflowerblue;
-    height: 90px;
-
-}
-#corpo{
-    background-color: rgba(146, 199, 230, 0.801);
-
+#fotos {
+    overflow: hidden;
 }
 
-article{
- width: 200px;
- height: 50px;
- outline: solid 1 px gray;
- overflow: hidden;
- margin: 10px;
- float: left;
- padding: 5px;
+article {
+    width: 200px;
+    height: 41px;
+    border: solid 1px gray;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+    position: relative;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+}
+article:hover{
+    background-color: #bfbfbf47;
+    cursor: pointer;
+}
 
+
+.titulo{
+    position: absolute;
+    color: #006DAC;
+    font-weight: bold;
+}
+.quantidade{
+    position: absolute;
+    color: rgb(94, 88, 88);
+    top: 24px;
+}
+article img{
+    margin-right: 5px;
+}
+
+a{
+    position: absolute;
+    top:1px;
+    right: 3px;
+    color: gray;
+    text-decoration: none;
 }
