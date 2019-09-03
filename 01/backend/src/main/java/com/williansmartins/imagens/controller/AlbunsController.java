@@ -27,7 +27,6 @@ public class AlbunsController {
 	@GetMapping
 	public Iterable<Album> buscarTudo() {
 		return repository.findAll();
-
 	}
 
 	@GetMapping("/{id}")
@@ -44,12 +43,12 @@ public class AlbunsController {
 			e.printStackTrace();
 			return "nok";
 		}
+
 	}
 
 	@PostMapping
 	public Album inserir(@RequestBody Album album) {
 		return repository.save(album);
-
 	}
 
 	@PutMapping("/{id}")
@@ -59,24 +58,24 @@ public class AlbunsController {
 			album.setId(id);
 			return repository.save(album);
 		} else {
+
 			return new Album();
 		}
-		
-		
 	}
-	
+
 	@PutMapping("/{id}/adicionar")
 	public Album adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
 		if (repository.existsById(id)) {
-			Album albumTemp = repository.findById(id). get();
-	 
+			Album albumTemp = repository.findById(id).get();
+
 			albumTemp.getImagens().add(imagem);
+
 			albumTemp.setId(id);
 			return repository.save(albumTemp);
 		} else {
+
 			return new Album();
 		}
-		
-		
+
 	}
 }

@@ -26,7 +26,6 @@ public class ImagensController {
 	@GetMapping
 	public Iterable<Imagem> buscarTudo() {
 		return repository.findAll();
-
 	}
 
 	@GetMapping("/{id}")
@@ -43,12 +42,12 @@ public class ImagensController {
 			e.printStackTrace();
 			return "nok";
 		}
+
 	}
 
 	@PostMapping
 	public Imagem inserir(@RequestBody Imagem imagem) {
 		return repository.save(imagem);
-
 	}
 
 	@PutMapping("/{id}")
@@ -56,8 +55,10 @@ public class ImagensController {
 
 		if (repository.existsById(id)) {
 			imagem.setId(id);
-			return repository.save(imagem);
+			repository.save(imagem);
+			return imagem;
 		} else {
+
 			return new Imagem();
 		}
 	}

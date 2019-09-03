@@ -7,4 +7,5 @@ import com.williansmartins.imagens.model.Imagem;
 public interface ImagensRepository extends CrudRepository<Imagem, Long> {
 
 
+
 }

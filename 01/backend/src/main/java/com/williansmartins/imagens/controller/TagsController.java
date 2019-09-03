@@ -1,3 +1,4 @@
+
 package com.williansmartins.imagens.controller;
 
 import java.util.Optional;
@@ -12,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.williansmartins.imagens.model.Album;
 import com.williansmartins.imagens.model.Imagem;
 import com.williansmartins.imagens.model.Tag;
 import com.williansmartins.imagens.repository.TagsRepository;
 
 @RestController
+
 @RequestMapping("/tags")
 
 public class TagsController {
@@ -28,7 +29,6 @@ public class TagsController {
 	@GetMapping
 	public Iterable<Tag> buscarTudo() {
 		return repository.findAll();
-
 	}
 
 	@GetMapping("/{id}")
@@ -45,12 +45,12 @@ public class TagsController {
 			e.printStackTrace();
 			return "nok";
 		}
+
 	}
 
 	@PostMapping
 	public Tag inserir(@RequestBody Tag tag) {
 		return repository.save(tag);
-
 	}
 
 	@PutMapping("/{id}")
@@ -60,24 +60,24 @@ public class TagsController {
 			tag.setId(id);
 			return repository.save(tag);
 		} else {
+
 			return new Tag();
 		}
-		
-		
 	}
-	
+
 	@PutMapping("/{id}/adicionar")
 	public Tag adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
 		if (repository.existsById(id)) {
-			Tag tagTemp = repository.findById(id). get();
-	 
+			Tag tagTemp = repository.findById(id).get();
+
 			tagTemp.getImagens().add(imagem);
+
 			tagTemp.setId(id);
 			return repository.save(tagTemp);
 		} else {
+
 			return new Tag();
 		}
-		
-		
+
 	}
 }
