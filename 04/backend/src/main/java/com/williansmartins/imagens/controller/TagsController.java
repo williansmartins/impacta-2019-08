@@ -32,7 +32,7 @@ public class TagsController {
 	}
 
 	@GetMapping("/{id}")
-	public Optional<Tag> buscarUm(@PathVariable Long id) {
+	public Optional<Tag> buscarPorTag(@PathVariable Long id) {
 		return repository.findById(id);
 	}
 
