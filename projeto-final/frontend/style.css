@@ -35,11 +35,7 @@ section .titulo{
     position: absolute;
 }
 
-section#albuns {
-    overflow: hidden;
-}
-
-section#fotos {
+section#albuns, section#albuns, section#tags  {
     overflow: hidden;
 }
 
