@@ -1,15 +1,14 @@
 body{
-    background-color: white;
+    background-color: rgb(105, 12, 105);
 }
 #menu {
     background-color: rgb(73, 8, 116);
-    height: 90px;
-}
-#content {
-    
+    height: 50px;
+    color: rgb(52, 114, 52);
 }
 
 article {
+    position:relative;
     width: 200px;
     height: 50px;
     outline: solid 1px gray;
@@ -17,4 +16,23 @@ article {
     margin: 10px;
     float: left;
     padding: 5px;
+
 }
+
+
+.titulo {
+    color: red;
+    position: absolute;
+}
+
+.quantidade {
+    color: green;
+    top: -8px;
+
+}
+
+.x {
+
+}
+
+
