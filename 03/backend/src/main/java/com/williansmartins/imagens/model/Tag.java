@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Album {
-
+public class Tag {
+	
 	@Id @GeneratedValue
 	private Long id;
 	private String nome;
@@ -43,7 +43,11 @@ public class Album {
 
 	@Override
 	public String toString() {
-		return "Album [id=" + id + ", nome=" + nome + ", imagens=" + imagens + "]";
+		return "Tag [id=" + id + ", nome=" + nome + ", imagens=" + imagens + "]";
 	}
 
+	public void setTag(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 }
