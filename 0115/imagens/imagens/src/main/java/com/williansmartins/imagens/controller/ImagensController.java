@@ -32,6 +32,12 @@ public class ImagensController {
 		System.out.println("buscando imagem com id: " + id);
 		return repository.findById(id);
 	}
+	
+	/*@GetMapping("/{id}")
+	public Optional<Imagem> buscarPorTag(@queryParams Long id) {
+		System.out.println("buscando imagem com id: " + id);
+		return repository.findById(id);
+	}*/
 
 	@DeleteMapping("/{id}")
 	public String removerUm(@PathVariable Long id) {

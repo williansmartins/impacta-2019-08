@@ -1,0 +1,24 @@
+#menu{
+    background-color: rgb(69, 8, 94);
+    height: 90px;
+    
+}
+
+#corpo{
+    background-color: rgb(180, 156, 202);
+}
+
+body{
+    background-color: rgb(180, 156, 202);
+}
+
+article{
+    width: 200px;
+    height: 50px;
+    outline: solid 1px gray;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+
+}
