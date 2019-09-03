@@ -1,6 +1,5 @@
 package com.williansmartins.imagens.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,26 +12,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.williansmartins.imagens.model.Album;
 import com.williansmartins.imagens.model.Imagem;
-import com.williansmartins.imagens.repository.AlbunsRepository;
+import com.williansmartins.imagens.model.Tag;
+import com.williansmartins.imagens.repository.TagsRepository;
 
 @RestController
-@RequestMapping("/albuns")
-public class AlbunsController {
+@RequestMapping("/tags")
+public class TagsController {
 
 	@Autowired
-	private AlbunsRepository repository;
+	private TagsRepository repository;
 
 	@GetMapping
-	public Iterable<Album> buscarTudo() {
-		Iterable<Album> findAll = repository.findAll();
-		return findAll;
+	public Iterable<Tag> buscarTudo() {
+		return repository.findAll();
 	}
 
 	@GetMapping("/{id}")
-	public Optional<Album> buscarUm(@PathVariable Long id) {
-		System.out.println("buscando album com id: " + id);
+	public Optional<Tag> buscarUm(@PathVariable Long id) {
+		System.out.println("buscando tag com id: " + id);
 		return repository.findById(id);
 	}
 
@@ -48,36 +46,33 @@ public class AlbunsController {
 	}
 
 	@PostMapping
-	public Album inserir(@RequestBody Album album) {
-		List<Album> findByNome = repository.findByNome("dsadsa");
-		System.out.println(findByNome);
-		return repository.save(album);
+	public Tag inserir(@RequestBody Tag tag) {
+		return repository.save(tag);
 	}
 
 	@PutMapping("/{id}")
-	public Album atualizar(@RequestBody Album album, @PathVariable Long id) {
+	public Tag atualizar(@RequestBody Tag tag, @PathVariable Long id) {
 		
 		if(repository.existsById(id)) {
-			album.setId(id);
-			return repository.save(album);
+			tag.setId(id);
+			return repository.save(tag);
 		}else {
-			return new Album();
+			return new Tag();
 		}
-		
 	}
 	@PutMapping("/{id}/adicionar")
-	public Album adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
+	public Tag adicionar(@RequestBody Imagem imagem, @PathVariable Long id) {
 		
 		if(repository.existsById(id)) {
-			Album albumTemp = repository.findById(id).get();
+			Tag tagTemp = repository.findById(id).get();
 			
-			albumTemp.getImagens().add(imagem);
+			tagTemp.getImagens().add(imagem);
 			
-			albumTemp.setId(id);
-			return repository.save(albumTemp);
+			tagTemp.setId(id);
+			return repository.save(tagTemp);
 		}else {
-			return new Album();
-		}
-		
+			return new Tag();
+}
 	}
+	
 }
