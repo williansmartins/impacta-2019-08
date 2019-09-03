@@ -1,23 +1,17 @@
 body{
     background-color: white;
+    font-family: arial;
 }
 #menu {
     background-color: rgb(73, 8, 116);
     height: 50px;
     color: white;
 }
-#albuns {
-    overflow: hidden;
-}
 
-#fotos {
-    overflow: hidden;
-}
-
-article {
+section article {
     width: 200px;
     height: 41px;
-    outline: solid 1px gray;
+    background-color: #cccccc;
     overflow: hidden;
     margin: 10px;
     float: left;
@@ -27,16 +21,44 @@ article {
     position: relative;
 }
 
-article img{
+section article:hover{
+    background-color: #a3a3a3;
+    cursor: pointer;
+}
+
+section article img{
     margin-right: 5px;
 }
 
-.titulo{
+section .titulo{
     color: #006DAC;
     position: absolute;
 }
 
-.quantidade{
+section#albuns {
+    overflow: hidden;
+}
+
+section#fotos {
+    overflow: hidden;
+}
+
+section#fotos .titulo{
+    top: 18px;
+}
+section#albuns .titulo{
+    top: 6px;
+}
+
+section .fechar{
+    color: gray;
+    position: absolute;
+    right: 8px;
+    top: 1px;
+    text-decoration: none;
+}
+
+section .quantidade{
     color: #006DAC;
     position: absolute;
     top: 24px;
