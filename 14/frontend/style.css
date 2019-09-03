@@ -1,0 +1,20 @@
+body{
+    background-color: white;
+}
+article{
+    width: 200px;
+    height: 75px;
+    outline: solid 1px gray;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+}
+
+#menu {
+    height: 80px;
+    background-color: rgb(197, 94, 245);
+}
+#wrapper {
+
+}
