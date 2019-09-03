@@ -10,12 +10,10 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Album {
 
-	@Id
-	
-	@GeneratedValue
+	@Id @GeneratedValue
 	private Long id;
 	private String nome;
-	@ManyToMany
+	@ManyToMany()
 	private List<Imagem> imagens;
 
 	public Long getId() {
