@@ -24,6 +24,9 @@ public class TagsApplicationTests {
 
 	@Test
 	public void inserirExcluir() {
+		
+		
+		
 		Tag tag = new Tag();
 		tag.setTag("CriandoTagDeTeste");
 		Assert.assertNull(tag.getId());
