@@ -2,25 +2,17 @@ package com.williansmartins.imagens.model;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-
-@Entity
 public class Album {
 
-	@Id @GeneratedValue
-	private Long id;
+	private int id;
 	private String nome;
-	@ManyToMany()
 	private List<Imagem> imagens;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
