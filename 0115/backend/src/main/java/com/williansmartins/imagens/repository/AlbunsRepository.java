@@ -1,16 +1,11 @@
 package com.williansmartins.imagens.repository;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
 import com.williansmartins.imagens.model.Album;
-import com.williansmartins.imagens.model.Imagem;
 
 public interface AlbunsRepository extends CrudRepository<Album, Long> {
-
-	Album save(Imagem imagem);
-
-	boolean existsById(int id);
-
-	
-
+	List<Album> findByNome(String nome);
 }
