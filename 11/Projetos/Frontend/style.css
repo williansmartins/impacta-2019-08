@@ -1,20 +1,18 @@
-body {
-    background-color: rgb(34, 235, 168);
+body{
+    background-color: white;
 }
-
 #menu {
-    background-color: rgb(75, 12, 75);
+    background-color: rgb(73, 8, 116);
     height: 90px;
 }
-
 #content {
-
+    
 }
 
 article {
     width: 200px;
     height: 50px;
-    outline: solid lpx gray;
+    outline: solid 1px gray;
     overflow: hidden;
     margin: 10px;
     float: left;
