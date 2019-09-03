@@ -1,26 +1,39 @@
-
 body{
-background-color: azure;
-
+    background-color: white;
+}
+#menu {
+    background-color: rgb(73, 8, 116);
+    height: 50px;
+    color: white;
+}
+#albuns {
+    
 }
 
-#menu{
-    background-color: cornflowerblue;
-    height: 90px;
-
+article {
+    width: 200px;
+    height: 41px;
+    outline: solid 1px gray;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+    position: relative;
+    background-color: #bfbfbf47;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-#corpo{
-    background-color: rgba(146, 199, 230, 0.801);
 
+.titulo{
+    position: absolute;
+    color: #006DAC;
+    font-weight: bold;
 }
-
-article{
- width: 200px;
- height: 50px;
- outline: solid 1 px gray;
- overflow: hidden;
- margin: 10px;
- float: left;
- padding: 5px;
-
+.quantidade{
+    position: absolute;
+    color: rgb(94, 88, 88);
+    top: 24px;
+}
+article img{
+    margin-right: 5px;
 }
