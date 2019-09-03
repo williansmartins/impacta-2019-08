@@ -2,6 +2,7 @@ package com.williansmartins.imagens.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ public class Tag {
 	@GeneratedValue
 	private Long id;
 	private String Tag;
-	@ManyToAny
+	@ManyToAny(metaColumn = @Column)
 	private List<Imagem> imagens;
 	
 	public Long getId() {
