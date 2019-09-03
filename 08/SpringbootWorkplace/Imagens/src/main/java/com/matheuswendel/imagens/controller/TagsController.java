@@ -1,9 +1,6 @@
 package com.matheuswendel.imagens.controller;
 
-
 import java.util.Optional;
-
-import javax.persistence.JoinTable;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,32 +12,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.matheuswendel.imagens.model.Imagem;
-import com.matheuswendel.imagens.repository.ImagemRepository;
+import com.matheuswendel.imagens.model.Album;
+import com.matheuswendel.imagens.model.Tag;
+import com.matheuswendel.imagens.repository.TagRepository;
 
 @RestController
-@RequestMapping("/imagens")
-public class ImagensController {
-
+@RequestMapping("/tags")
+public class TagsController {
+	
 	@Autowired
-	private ImagemRepository repository;
-
-	@GetMapping
-	public  Iterable<Imagem> buscarTudo() {
+	private TagRepository repository;
+	
+	@GetMapping("/")
+	public  Iterable<Tag> buscarTudo() {
 		
 		return repository.findAll(); 
 	}
-
+	
+	
+	
+	
+	
 	@GetMapping("/{id}")
-	public Optional<Imagem> buscarUm(@PathVariable String id) {
-//		System.out.println("buscando imagem com id: " + id);
+	public Optional<Tag> buscarUm(@PathVariable String id) {
+//		System.out.println("buscando tag com id: " + id);
 //		CustomerDAO dao = new CustomerDAO();
 //
 		Long idParaFuncao = Long.parseLong(id);
 		return repository.findById(idParaFuncao);
 		
 	}
-
 	@DeleteMapping("/{id}")
 	public String removerUm(@PathVariable Long id) {
 		
@@ -57,43 +58,25 @@ public class ImagensController {
 	}
 
 	@PostMapping
-	public Imagem inserir(@RequestBody Imagem imagem) {
+	public Tag inserir(@RequestBody Tag tag) {
 		
-		return (repository.save(imagem));
+		return (repository.save(tag));
 		
 
 	}
 	@PutMapping("/{id}")
-	public Imagem atualizar(@RequestBody Imagem imagem, @PathVariable Long id){
+	public Tag atualizar(@RequestBody Tag tag, @PathVariable Long id){
 
 		if(repository.existsById(id)) {
-			imagem.setId(id);
-			return repository.save(imagem);
+			tag.setId(id);
+			return repository.save(tag);
 			
 			
 		}
-		return new Imagem();
+		return new Tag();
 		
 		
 		
 	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
