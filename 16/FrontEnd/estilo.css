@@ -1,24 +1,84 @@
 #menu{
-    background-color: rgb(69, 8, 94);
-    height: 90px;
-    
-}
-
-#corpo{
-    background-color: rgb(180, 156, 202);
+    background-color:black;
+    height: 50px;
+    color: white;
 }
 
 body{
-    background-color: rgb(180, 156, 202);
+    background-color: white;
+}
+
+article img{
+    margin-right: 5px;
+
 }
 
 article{
     width: 200px;
-    height: 50px;
-    outline: solid 1px gray;
+    height: 41px;
+    border: solid 1px gray;
     overflow: hidden;
     margin: 10px;
     float: left;
     padding: 5px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+}
 
+article:hover{
+    background-color: rgb(194, 192, 192);
+    cursor: pointer;
+}
+
+.album{
+    color: #006dac;
+    position: absolute;
+    font-weight: bold;
+
+}
+
+.quantidade{
+    color:  black;
+}
+
+.imagem{
+    color:black;
+    position: absolute;
+}
+
+#album{
+    overflow: hidden;
+}
+
+#fotos{
+    overflow: hidden;
+}
+a {
+    color: gray;
+    text-decoration: none;
+    position: absolute;
+    top: 0px;
+    right: 2px;
+}
+
+.tag{
+    color:black;
+    width: auto;
+    height: auto;
+    border: solid 1px gray;
+    overflow: hidden;
+    margin: 10px;
+    padding: 3px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.tag:hover{
+    background-color: rgb(194, 192, 192);
+    cursor: pointer; 
 }
