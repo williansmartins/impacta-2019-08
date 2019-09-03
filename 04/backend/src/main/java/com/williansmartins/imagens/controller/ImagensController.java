@@ -33,6 +33,12 @@ public class ImagensController {
 		return repository.findById(id);
 	}
 
+	@GetMapping("/tags/{tags}")
+	public Optional<Imagem> buscarPorTag(@PathVariable String tags) {
+		
+		return tag.split(",");.toString();
+	}
+
 	@DeleteMapping("/{id}")
 	public String removerUm(@PathVariable Long id) {
 		try {

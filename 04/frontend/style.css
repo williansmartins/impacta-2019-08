@@ -1,22 +1,65 @@
 body{
-background-color: rgb(255, 255, 255);
-
+    background-color: white;
+    font-family: arial;
 }
-
 #menu {
     background-color: rgb(73, 8, 116);
-    height: 90px;
-}
-
-#content{
-}
-
-article{
-    width: 200px;
     height: 50px;
-    outline: solid 1px gray;
+    color: white;
+}
+
+section article {
+    width: 200px;
+    height: 41px;
+    background-color: #cccccc;
     overflow: hidden;
     margin: 10px;
     float: left;
     padding: 5px;
+    font-family: arial;
+    font-size: 14px;
+    position: relative;
+}
+
+section article:hover{
+    background-color: #a3a3a3;
+    cursor: pointer;
+}
+
+section article img{
+    margin-right: 5px;
+}
+
+section .titulo{
+    color: #006DAC;
+    position: absolute;
+}
+
+section#albuns {
+    overflow: hidden;
+}
+
+section#fotos {
+    overflow: hidden;
+}
+
+section#fotos .titulo{
+    top: 18px;
+}
+section#albuns .titulo{
+    top: 6px;
+}
+
+section .fechar{
+    color: gray;
+    position: absolute;
+    right: 1px;
+    top: 5px;
+    text-decoration: none;
+}
+
+section .quantidade{
+    color: #006DAC;
+    position: absolute;
+    top: 24px;
 }
