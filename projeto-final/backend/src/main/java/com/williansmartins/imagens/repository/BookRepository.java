@@ -1,13 +1,8 @@
 package com.williansmartins.imagens.repository;
 
-import java.util.List;
-
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.williansmartins.imagens.model.Book;
 
-public interface BookRepository extends CrudRepository<Book, Long> {
-
-    List<Book> findByName(String name);
-
+public interface BookRepository extends JpaRepository<Book, Integer>{
 }
