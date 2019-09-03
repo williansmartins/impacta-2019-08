@@ -9,10 +9,10 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Album {
-	@Id @GeneratedValue
+	@Id	@GeneratedValue
 	private Long id;
 	private String nome;
-	
+
 	@ManyToMany
 	private List<Imagem> imagens;
 
@@ -31,7 +31,7 @@ public class Album {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 
 	public List<Imagem> getImagens() {
 		return imagens;
