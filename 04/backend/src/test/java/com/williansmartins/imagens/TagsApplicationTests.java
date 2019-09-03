@@ -1,73 +1,40 @@
 package com.williansmartins.imagens;
 
-import java.util.Optional;
+import javax.transaction.Transactional;
 
-import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.williansmartins.imagens.model.Imagem;
 import com.williansmartins.imagens.model.Tag;
+import com.williansmartins.imagens.repository.ImagensRepository;
 import com.williansmartins.imagens.repository.TagsRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@Transactional
 public class TagsApplicationTests {
 
 	@Autowired
-	private TagsRepository tagsRepository;
+	TagsRepository tagRepository;
+
+	@Autowired
+	ImagensRepository imagemRepository;
 
 	@Test
-	public void inserirExcluir() {
-		
-		
-		
-		Tag tag = new Tag();
-		tag.setTag("CriandoTagDeTeste");
-		Assert.assertNull(tag.getId());
+	public void inserir() {
+		// criacao da tag
+		Tag tag1 = new Tag("familia");
+		Tag tag2 = new Tag("amigos");
+		Tag tag3 = new Tag("esporte");
 
-		tagsRepository.save(tag);
-		Assert.assertNotNull(tag.getId());
+		// criacao da imagens
+		Imagem imagem1 = new Imagem("http://www.williansmartins1.com", tag1, tag2, tag3);
+		imagemRepository.save(imagem1);
 
-		tagsRepository.deleteById(tag.getId());
-		Optional<Tag> tagDoBanco = tagsRepository.findById(tag.getId());
-		Assert.assertEquals(tagDoBanco, Optional.empty());
-	}
-
-	@Test
-	public void atualizarBuscarUm() {
-
-		Tag tag = new Tag();
-		tag.setTag("CriandoTagDeTeste");
-		Assert.assertNull(tag.getId());
-
-		tagsRepository.save(tag);
-		Assert.assertNotNull(tag.getId());
-
-		String tagTeste = "AtualizandoTagDeTeste";
-
-		tag.setTag(tagTeste);
-		Optional<Tag> tagDoBanco = tagsRepository.findById(tag.getId());
-		String tagNova = tagDoBanco.get().getTag();
-		Assert.assertNotEquals(tagTeste, tagNova);
-		tagsRepository.deleteById(tag.getId());
-	}
-
-	@Test
-	public void buscarTudo() {
-		Tag tag = new Tag();
-		tag.setTag("CriandoTagDeTeste");
-		Assert.assertNull(tag.getId());
-
-		tagsRepository.save(tag);
-		Assert.assertNotNull(tag.getId());
-
-		tagsRepository.deleteById(tag.getId());
 	}
 
 }
