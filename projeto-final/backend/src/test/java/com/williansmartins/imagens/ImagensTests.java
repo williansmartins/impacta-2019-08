@@ -18,7 +18,7 @@ import com.williansmartins.imagens.repository.ImagensRepository;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ImagensApplicationTests {
+public class ImagensTests {
 
 	@Autowired
 	ImagensRepository imagemRepository;
