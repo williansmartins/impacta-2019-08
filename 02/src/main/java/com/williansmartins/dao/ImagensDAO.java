@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ImagensDAO {
 	public static void main(String[] args) {
-
+		//Roubei teu codigo
 		try {
 			String url = "jdbc:mysql://localhost/sakila?useTimezone=true&serverTimezone=UTC";
 			String user = "root";
