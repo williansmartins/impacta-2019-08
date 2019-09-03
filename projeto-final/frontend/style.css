@@ -6,8 +6,12 @@ body{
     height: 50px;
     color: white;
 }
-#content {
-    
+#albuns {
+    overflow: hidden;
+}
+
+#fotos {
+    overflow: hidden;
 }
 
 article {
