@@ -17,8 +17,8 @@ app.controller('AlbunsController', function($scope, $http) {
             url: 'http://localhost:8080/albuns/' + id
         }).then(function successCallback(response) {
             console.info("deu bom");
-            $scope.albuns = response.data;
-        }, function errorCallback(response) {
+            $("#album_" + id).hide();
+        }, function errorCallback(data, status, headers, config, statusText , xhrStatus ) {
             console.info("deu ruim");
         });
     }

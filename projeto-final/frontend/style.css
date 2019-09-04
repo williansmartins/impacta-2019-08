@@ -8,7 +8,7 @@ body{
     color: white;
 }
 
-#addAlbum {
+.addAlbum {
     width: 200px;
     height: 41px;
     background-color: #cccccc;
@@ -21,12 +21,12 @@ body{
     position: relative;
 }
 
-#addAlbum:hover{
+.addAlbum:hover{
     background-color: #a3a3a3;
     cursor: pointer;
 }
 
-#addAlbum .foto{
+.addAlbum .foto{
     margin-right: 5px;
     width: 40px;
 }

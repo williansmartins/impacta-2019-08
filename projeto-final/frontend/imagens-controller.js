@@ -14,4 +14,16 @@ app.controller('ImagensController', function($scope, $http) {
         console.info("deu ruim");
     });
 
+    $scope.remover = function(id){
+        $http({
+            method: 'DELETE',
+            url: 'http://localhost:8080/imagens/' + id
+        }).then(function successCallback(response) {
+            console.info("deu bom");
+            $("#fotos_" + id).hide();
+        }, function errorCallback(data, status, headers, config, statusText , xhrStatus ) {
+            console.info("deu ruim");
+        });
+    }
+
 });
