@@ -1,39 +1,86 @@
 body{
     background-color: white;
+    font-family: arial;
 }
 #menu {
     background-color: rgb(73, 8, 116);
     height: 50px;
     color: white;
 }
-#albuns {
-    
-}
 
-article {
+section article {
     width: 200px;
     height: 41px;
-    outline: solid 1px gray;
+    background-color: #cccccc;
     overflow: hidden;
     margin: 10px;
     float: left;
     padding: 5px;
-    position: relative;
-    background-color: #bfbfbf47;
+    font-family: arial;
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    border-radius: 4px;
 }
 
-.titulo{
-    position: absolute;
-    color: #006DAC;
-    font-weight: bold;
+section article:hover{
+    background-color: #a3a3a3;
+    cursor: pointer;
 }
-.quantidade{
+
+section article img{
+    margin-right: 5px;
+}
+
+section .titulo{
+    color: #006DAC;
     position: absolute;
-    color: rgb(94, 88, 88);
+}
+
+section#albuns {
+    overflow: hidden;
+}
+
+section#fotos {
+    overflow: hidden;
+}
+
+section#fotos .titulo{
+    top: 18px;
+}
+section#albuns .titulo{
+    top: 6px;
+}
+
+section .fechar{
+    color: gray;
+    position: absolute;
+    right: 8px;
+    top: 1px;
+    text-decoration: none;
+}
+
+section .quantidade{
+    color: #006DAC;
+    position: absolute;
     top: 24px;
 }
-article img{
-    margin-right: 5px;
+
+.tag{
+    width: 60px;
+    height: 17px;
+    background-color: #cccccc;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+    font-family: arial;
+    font-size: 14px;
+    position: relative;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+.tag:hover{
+    background-color: #a3a3a3;
+    cursor: pointer;
 }
