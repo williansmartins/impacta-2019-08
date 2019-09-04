@@ -8,49 +8,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
+    
 
 </head>
 
-<body>
+<body ng-app="app">
     <nav id=menu>
-        menu
+        <input type="text" ng-model="busca" />
+        Você está procurando: {{busca}}
     </nav>
-    <section id=albuns>
+    <section id="albuns" ng-controller="AlbunsController" >
         <h2>Álbuns</h2>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Familia</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">x</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Familia</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">x</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Familia</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">x</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Familia</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">x</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Familia</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">x</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Familia</span>
-            <span class="quantidade">Fotos: 35</span>
+        <article ng-repeat="album in albuns">
+            <img class="foto" src="{{album.imagem[0].url}}" alt="">
+            <span class="titulo">{{album.nome}}</span>
+            <span class="quantidade">{{album.imagem.length}}</span>
             <a href="#" class="fechar">x</a>
         </article>
     </section>
@@ -115,6 +87,7 @@
     <hr>
     <br>
     <br>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="main.js"></script>
 </body>
-
 </html>
