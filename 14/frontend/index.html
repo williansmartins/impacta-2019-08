@@ -8,86 +8,24 @@
     <title>Document</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
-<body>
+<bod0 ng-app="app">
     <nav id="menu">
-        menu
+        <input type="text" ng-model="busca"/>
+        Você está procurando: {{busca}}
+        <button id="adicionar">Novo Album</button>
     </nav>
-    <section id="albuns">
+    <section id="albuns" ng-controller="AlbunsController">
         <h2>Albuns</h2>
-        <article>
+        <article ng-repeat="album in albuns">
             <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
+            <span class="titulo">{{album.nome}}</span>
             <span class="quantidade">Fotos: 35</span>
             <a href="#" class="x">X</a>
         </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
+        
     </section>
     <hr>
     <section id="fotos">
@@ -193,6 +131,8 @@
         </div>
 
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
