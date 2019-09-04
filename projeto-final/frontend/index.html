@@ -10,108 +10,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body ng-app="app">
+    
     <nav id="menu">
-        menu
+        <input type="text" ng-model="busca" />
+        Você está procurando: {{busca}}
     </nav>
-    <section id="albuns">
+    <section id="albuns" ng-controller="AlbunsController">
         <h2>Álbuns</h2>
-        <article>
+        
+        <article ng-repeat="album in albuns">
             <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
+            <span class="titulo">Album: {{busca}}</span>
             <span class="quantidade">Fotos: 35</span>
             <a href="#" class="fechar">
                 <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
             </a>
         </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
-        <article>
-            <img class="foto" src="http://lorempixel.com/40/40/sports/1/" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="fechar">
-                <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-            </a>
-        </article>
+        
     </section>
     <hr>
     <section id="fotos">
@@ -241,7 +157,8 @@
     <br>
     <br>
     
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
