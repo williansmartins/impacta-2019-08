@@ -7,7 +7,7 @@ body{
     height: 50px;
     color: white;
 }
-.addFoto{
+.artigo-imagem{
     overflow: hidden;
     margin: 10px;
     float: left;
@@ -16,7 +16,7 @@ body{
     width: 700px;
 }
 
-.addAlbum {
+.artigo-album {
     width: 200px;
     height: 41px;
     background-color: #cccccc;
@@ -29,12 +29,12 @@ body{
     position: relative;
 }
 
-.addAlbum:hover{
+.artigo-album:hover{
     background-color: #a3a3a3;
     cursor: pointer;
 }
 
-.addAlbum .foto{
+.artigo-album .foto{
     margin-right: 5px;
     width: 40px;
 }
@@ -91,15 +91,15 @@ a.tag{
     font-size: 18px;
 }
 
-.addFoto .foto{
-    width: 20%;
+.artigo-imagem{
+    width: 100px;
     float: left;
-    padding: 7px;
+}
+
+.artigo-imagem .foto{
+    width: 100%;
 }
 
 article{
     position: relative;
 }
-
-.grid-item { width: 200px; }
-.grid-item--width2 { width: 400px; }

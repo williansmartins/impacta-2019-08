@@ -19,7 +19,7 @@
     <section id="albuns" ng-controller="AlbunsController">
         <h2>Álbuns</h2>
         
-        <article ng-repeat="album in albuns" class="addAlbum" id="album_{{album.id}}">
+        <article ng-repeat="album in albuns" class="artigo-album" id="album_{{album.id}}">
             <img class="foto" src="{{album.imagens[0].url}}" alt="">
             <span class="titulo">{{album.nome}}</span>
             <span class="quantidade">{{album.imagens.length}} itens</span>
@@ -32,7 +32,7 @@
     <hr>
     <section id="fotos" ng-controller="ImagensController">
         <h2>Fotos</h2>
-        <article ng-repeat="imagem in imagens" class="addFoto" id="imagem_{{imagem.id}}">
+        <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
             <img class="foto" src="{{imagem.url}}" alt="">
             <a href="javascript:void(0)" class="fechar" ng-click="remover(imagem.id)">
                 <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
