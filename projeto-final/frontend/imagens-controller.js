@@ -20,7 +20,7 @@ app.controller('ImagensController', function($scope, $http) {
             url: 'http://localhost:8080/imagens/' + id
         }).then(function successCallback(response) {
             console.info("deu bom");
-            $("#fotos_" + id).hide();
+            $("#imagem_" + id).hide();
         }, function errorCallback(data, status, headers, config, statusText , xhrStatus ) {
             console.info("deu ruim");
         });
