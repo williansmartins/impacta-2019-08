@@ -23,7 +23,7 @@
             <img class="foto" src="{{album.imagens[0].url}}" alt="">
             <span class="titulo">{{album.nome}}</span>
             <span class="quantidade">{{album.imagens.length}} itens</span>
-            <a href="#" class="fechar">
+            <a href="javascript:void(0)" class="fechar" ng-click="remover(album.id)">
                 <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
             </a>
         </article>
@@ -37,7 +37,6 @@
             <a href="#" class="fechar">
                 <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
             </a>
-            
         </article>
         
     </section>
