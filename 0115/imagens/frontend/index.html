@@ -30,9 +30,9 @@
         
     </section>
     <hr>
-    <section id="fotos" ng-controller="AlbunsController">
+    <section id="fotos" ng-controller="ImagensController">
         <h2>Fotos</h2>
-        <article class="grid" ng-repeat="imagem in albuns[0].imagens" id="addFoto">
+        <article class="grid" ng-repeat="imagem in imagens" id="addFoto">
             <img class="foto grid-item--width2" src="{{imagem.url}}" alt="">
             <a href="#" class="fechar">
                 <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
@@ -76,6 +76,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="main.js"></script>
+    <script src="albuns-controller.js"></script>
+    <script src="imagens-controller.js"></script>
 </body>
 
 </html>
