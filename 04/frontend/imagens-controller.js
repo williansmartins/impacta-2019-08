@@ -1,8 +1,5 @@
-var app = angular.module('app', []);
-
-$scope.albuns = new Object();
-
 app.controller('ImagensController', function ($scope, $http) {
+    $scope.albuns = new Object();
     $http({
         method: 'GET',
         url: 'http://localhost:8080/imagens'

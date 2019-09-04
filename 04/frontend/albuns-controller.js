@@ -1,6 +1,5 @@
 app.controller('AlbunsController', function($scope, $http) {
     $scope.albuns=new Object(); 
-      
     $http({
         method: 'GET',
         url: 'http://localhost:8080/albuns'
@@ -10,7 +9,6 @@ app.controller('AlbunsController', function($scope, $http) {
     }, function errorCallback(response) {
         console.info("deu ruim");
     });
-
     $scope.remover = function(id){
         $http({
             method: 'DELETE',
@@ -22,6 +20,4 @@ app.controller('AlbunsController', function($scope, $http) {
             console.info("deu ruim");
         });
     }
-   
-
 });
