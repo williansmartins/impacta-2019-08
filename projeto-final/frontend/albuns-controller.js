@@ -11,7 +11,17 @@ app.controller('AlbunsController', function($scope, $http) {
         console.info("deu ruim");
     });
 
-
+    $scope.remover = function(id){
+        $http({
+            method: 'DELETE',
+            url: 'http://localhost:8080/albuns/' + id
+        }).then(function successCallback(response) {
+            console.info("deu bom");
+            $scope.albuns = response.data;
+        }, function errorCallback(response) {
+            console.info("deu ruim");
+        });
+    }
    
 
 });
