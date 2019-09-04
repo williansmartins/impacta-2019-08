@@ -19,7 +19,6 @@ section article {
     font-family: arial;
     font-size: 14px;
     position: relative;
-    border-radius: 4px;
 }
 
 section article:hover{
@@ -27,7 +26,7 @@ section article:hover{
     cursor: pointer;
 }
 
-section article img{
+section article img.foto{
     margin-right: 5px;
 }
 
@@ -36,11 +35,7 @@ section .titulo{
     position: absolute;
 }
 
-section#albuns {
-    overflow: hidden;
-}
-
-section#fotos {
+section#albuns, section#fotos, section#tags  {
     overflow: hidden;
 }
 
@@ -59,28 +54,37 @@ section .fechar{
     text-decoration: none;
 }
 
+article:hover .fechar{
+    display: block;
+}
+
+.fechar{
+    display: none;
+}
+
+section .fechar img{
+    width: 15px;
+}
+
+section .fechar{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    text-decoration: none;
+}
+
 section .quantidade{
     color: #006DAC;
     position: absolute;
     top: 24px;
 }
 
-.tag{
-    width: 60px;
-    height: 17px;
-    background-color: #cccccc;
-    overflow: hidden;
-    margin: 10px;
-    float: left;
-    padding: 5px;
-    font-family: arial;
-    font-size: 14px;
-    position: relative;
-    border-radius: 4px;
-    text-align: center;
+a.tag{
+    background-color: gray;
     text-decoration: none;
-}
-.tag:hover{
-    background-color: #a3a3a3;
-    cursor: pointer;
+    padding: 3px;
+    border-radius: 10px;
+    color: white;
+    margin: 8px;
+    font-size: 18px;
 }
