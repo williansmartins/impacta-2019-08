@@ -8,7 +8,7 @@ body{
     color: white;
 }
 
-section article {
+#addAlbum {
     width: 200px;
     height: 41px;
     background-color: #cccccc;
@@ -21,13 +21,14 @@ section article {
     position: relative;
 }
 
-section article:hover{
+#addAlbum:hover{
     background-color: #a3a3a3;
     cursor: pointer;
 }
 
-section article img.foto{
+#addAlbum .foto{
     margin-right: 5px;
+    width: 40px;
 }
 
 section .titulo{
@@ -88,3 +89,12 @@ a.tag{
     margin: 8px;
     font-size: 18px;
 }
+
+#addFoto .foto{
+    width: 20%;
+    float: left;
+    padding: 7px;
+}
+
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
