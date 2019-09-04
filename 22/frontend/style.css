@@ -59,3 +59,13 @@ article:hover{
     background-color: #afa7a7;
     cursor: pointer;
 }
+
+a.tag{
+    background-color: gray;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 10px;
+    color: white;
+    margin: 8px;
+    font-size: 18px;
+}
