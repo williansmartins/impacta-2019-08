@@ -1,56 +1,86 @@
 body{
     background-color: white;
+    font-family: arial;
 }
 #menu {
     background-color: rgb(73, 8, 116);
     height: 50px;
     color: white;
 }
-#albuns {
-    overflow: hidden;
-}
 
-#fotos {
-    overflow: hidden;
-}
-
-article {
+section article {
     width: 200px;
     height: 41px;
-    border: solid 1px gray;
+    background-color: #cccccc;
     overflow: hidden;
     margin: 10px;
     float: left;
     padding: 5px;
-    position: relative;
+    font-family: arial;
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
     border-radius: 4px;
 }
-article:hover{
-    background-color: #bfbfbf47;
+
+section article:hover{
+    background-color: #a3a3a3;
     cursor: pointer;
 }
 
-
-.titulo{
-    position: absolute;
-    color: #006DAC;
-    font-weight: bold;
-}
-.quantidade{
-    position: absolute;
-    color: rgb(94, 88, 88);
-    top: 24px;
-}
-article img{
+section article img{
     margin-right: 5px;
 }
 
-a{
+section .titulo{
+    color: #006DAC;
     position: absolute;
-    top:1px;
-    right: 3px;
+}
+
+section#albuns {
+    overflow: hidden;
+}
+
+section#fotos {
+    overflow: hidden;
+}
+
+section#fotos .titulo{
+    top: 18px;
+}
+section#albuns .titulo{
+    top: 6px;
+}
+
+section .fechar{
     color: gray;
+    position: absolute;
+    right: 8px;
+    top: 1px;
     text-decoration: none;
+}
+
+section .quantidade{
+    color: #006DAC;
+    position: absolute;
+    top: 24px;
+}
+
+.tag{
+    width: 60px;
+    height: 17px;
+    background-color: #cccccc;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+    font-family: arial;
+    font-size: 14px;
+    position: relative;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+.tag:hover{
+    background-color: #a3a3a3;
+    cursor: pointer;
 }
