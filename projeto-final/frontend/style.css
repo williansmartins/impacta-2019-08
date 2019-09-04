@@ -12,8 +12,8 @@ body{
     margin: 10px;
     float: left;
     position: relative;
-    outline: solid 1px #006DAC;
-    width: 700px;
+    /* outline: solid 1px #006DAC; */
+    width: 100px;
 }
 
 .artigo-album {
@@ -91,10 +91,7 @@ a.tag{
     font-size: 18px;
 }
 
-.artigo-imagem{
-    width: 100px;
-    float: left;
-}
+
 
 .artigo-imagem .foto{
     width: 100%;
