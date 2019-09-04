@@ -5,40 +5,46 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+
 @Entity
-public class Album {
+public class Tag {
+
 	@Id @GeneratedValue
-	private Long id;
-	private String  nome;
-	@ManyToMany
-	private List<Imagem> imagens;
+	private long id;
 	
-	public Long getId() {
+	private String tag;
+	
+	@ManyToMany
+
+	private List<Imagem> imagens;
+
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+
+	public void setId(long id) {
 		this.id = id;
 	}
-	public String getNome() {
-		return nome;
+
+	public String getTag() {
+		return tag;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setTag(String tag) {
+		this.tag = tag;
 	}
-	
+
 	public List<Imagem> getImagens() {
 		return imagens;
 	}
+
 	public void setImagens(List<Imagem> imagens) {
 		this.imagens = imagens;
 	}
+
 	
-	@Override
-	public String toString() {
-		return "Album [id=" + id + ", nome=" + nome + "]";
-	}
-	
-	
+
 	
 }
