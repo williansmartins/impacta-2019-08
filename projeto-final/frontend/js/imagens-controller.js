@@ -27,7 +27,6 @@ app.controller('ImagensController', function ($scope, $http) {
 
 
     $scope.salvar = function () {
-        debugger;
         if ($scope.idImagem == null) {
             $http({
                 method: 'POST',
