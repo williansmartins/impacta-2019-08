@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app="app">
+    
+    <nav id="menu">
+        <input type="text" ng-model="busca" />
+        Você está procurando: {{busca}}
+    </nav>
+    <section id="albuns" ng-controller="AlbunsController">
+        <h2>Álbuns</h2>
+        
+        <article ng-repeat="album in albuns" id="addAlbum">
+            <img class="foto" src="{{album.imagens[0].url}}" alt="">
+            <span class="titulo">{{album.nome}}</span>
+            <span class="quantidade">{{album.imagens.length}} itens</span>
+            <a href="#" class="fechar">
+                <img src="https://img.elo7.com.br/product/zoom/202F6A9/papel-arroz-a4-dori-2-personalizados.jpg" alt="">
+            </a>
+        </article>
+        
+    </section>
+    <hr>
+    <section id="fotos" ng-controller="ImagensController">
+        <h2>Fotos</h2>
+        <article class="grid" ng-repeat="imagem in imagens" id="addFoto">
+            <img class="foto grid-item--width2" src="{{imagem.url}}" alt="">
+            <a href="#" class="fechar">
+                <img src="https://img.elo7.com.br/product/zoom/202F6A9/papel-arroz-a4-dori-2-personalizados.jpg" alt="">
+            </a>
+            
+        </article>
+        
+    </section>
+    <hr>
+    <section id="tags">
+        <h2>Tags</h2>
+        <a href="#" class="tag">
+            <span>familia</span>
+            <span>x</span>
+        </a>
+        <a href="#" class="tag">
+            <span>esporte</span>
+            <span>x</span>
+        </a>
+        <a href="#" class="tag">
+            <span>animal</span>
+            <span>x</span>
+        </a>
+        <a href="#" class="tag">
+            <span>comida</span>
+            <span>x</span>
+        </a>
+        <a href="#" class="tag">
+            <span>gatos</span>
+            <span>x</span>
+        </a>
+    </section>
+    <hr>
+    <br>
+    <br>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="main.js"></script>
+    <script src="albuns-controller.js"></script>
+    <script src="imagens-controller.js"></script>
+</body>
+
+</html>
