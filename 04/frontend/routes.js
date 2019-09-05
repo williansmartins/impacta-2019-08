@@ -12,6 +12,10 @@ angular.module('app')
 		templateUrl : "views/albuns.html",
 		controller: 'AlbunsController'
 	})
+	.when('/tags', {
+		templateUrl: "views/tags.html",
+		controller:'TagsController'
+	})
 	.when('/404', {
 		templateUrl : "views/404.html"
 	})
