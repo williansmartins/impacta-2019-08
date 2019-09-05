@@ -2,13 +2,16 @@
     <h2>Fotos</h2>   
     <div class="form-group">
         <input type="text" class="form-control url" placeholder="url" ng-model="url">
-        <a href="javascript:void(0)" class="nova-imagem btn btn-success" ng-click="alerta()" >Gravar nova imagem</a>
+        <a href="javascript:void(0)" class="nova-imagem btn btn-success" ng-click="salvar()" >Gravar nova imagem</a>
     </div>
     <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
         <img class="foto" ng-src="{{imagem.url}}" alt="">
         <a href="javascript:void(0)" class="fechar" ng-click="remover(imagem.id)">
             <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
         </a>
+        <a href="javascript:void(0)" class="editar" ng-click="editar(imagem)">
+                <img src="img/pencil.png" alt="">
+            </a>
     </article>
     <hr>
 </section>
