@@ -1,1 +1,0 @@
-# simples aplicação html + jquery + servlet + hibernate
