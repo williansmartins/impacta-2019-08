@@ -2,11 +2,7 @@ body{
     background-color: white;
     font-family: arial;
 }
-#menu {
-    background-color: rgb(73, 8, 116);
-    height: 50px;
-    color: white;
-}
+
 .artigo-imagem{
     overflow: hidden;
     margin: 10px;
@@ -99,4 +95,38 @@ a.tag{
 
 article{
     position: relative;
+}
+
+/* MENU */
+
+.logo{
+    padding: 5px 5px 0px 5px;
+}
+.buscar{
+    border: solid 1px rgb(206, 206, 206);
+    border-radius: 10px;
+    width: 30%;
+    margin: 15px 50px 50px 250px;
+    position: absolute;
+}
+.lupa{
+    width:1.5%;
+    position: absolute;
+    margin: 17px 50px 50px 700px;
+}
+.add{
+    width: 2.5%;
+    position: absolute;
+    margin: 7px 40px 0px 1150px;
+}
+.opcoes{
+    width: 3%;
+    right: 40px;
+    top: 5px;
+    position: absolute;
+}
+#menu {
+    background-color: rgb(73, 8, 116);
+    height: 50px;
+    color: white;
 }

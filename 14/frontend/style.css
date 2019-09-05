@@ -26,8 +26,8 @@ article {
 }
 
 article:hover{
-    background-color: rgb(231, 231, 231);
     cursor: pointer;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(71, 71, 71,0.3));
 }
 
 article img{
@@ -50,10 +50,11 @@ article img{
     top: 24px;
 }
 
-#album h2{
-    font-size: 14px;
-    margin-left: 5px;
+.title{
+    font-size: 20px;
+    margin: 5px;
     color: rgb(71, 71, 71);
+    font-weight: bold;
 }
 
 .x{
@@ -61,7 +62,7 @@ article img{
     top: 5px;
     right: 10px;
     text-decoration: none;
-    color: rgb(133, 132, 132);
+    color: white;
     display: none;
 }
 article:hover .x{
