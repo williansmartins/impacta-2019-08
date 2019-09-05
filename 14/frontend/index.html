@@ -49,12 +49,15 @@
    
     <section id="albuns" ng-controller="AlbunsController">
         <h2 class="title">Albuns</h2>
+        <div class="article_content"></div>
         <article ng-repeat="album in albuns">
             <img src="https://via.placeholder.com/40x40" alt="">
             <span class="titulo">{{album.nome}}</span>
             <span class="quantidade">Fotos: 35</span>
             <a href="#" class="x">X</a>
+        </div>
         </article>
+    
         
     </section>
     <hr>
