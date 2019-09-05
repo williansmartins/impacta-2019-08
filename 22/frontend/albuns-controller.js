@@ -18,7 +18,7 @@ app.controller('AlbunsController', function($scope, $http) {
         }).then(function successCallback(response) {
             console.info("deu bom");
             $("#album_" + id).hide();
-        }, function errorCallback(data, status, headers, config, statusText , xhrStatus ) {
+        }, function errorCallback(response) {
             console.info("deu ruim");
         });
     }

@@ -14,6 +14,7 @@ app.controller('ImagensController', function($scope, $http) {
         console.info("deu ruim");
     });
 
+
     $scope.remover = function(id){
         $http({
             method: 'DELETE',
