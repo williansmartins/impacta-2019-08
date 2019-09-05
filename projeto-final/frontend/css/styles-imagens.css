@@ -1,0 +1,33 @@
+#imagens{
+    overflow: hidden;
+}
+
+#imagens .titulo{
+    top: 18px;
+}
+
+#imagens .url{
+    width: 200px;
+    float: left;
+}
+#imagens .nova-imagem{
+    float: left;
+    margin-left: 5px;
+}
+
+#imagens .form-group{
+    height: 40px;
+}
+
+#imagens .artigo-imagem{
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    position: relative;
+    /* outline: solid 1px #006DAC; */
+    width: 100px;
+}
+
+#imagens .artigo-imagem .foto{
+    width: 100%;
+}

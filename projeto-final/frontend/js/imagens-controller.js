@@ -25,6 +25,23 @@ app.controller('ImagensController', function($scope, $http) {
         });
     }
 
+
+
+
+    $scope.alerta = function(){
+       $http({
+            method: 'POST',
+            url: 'http://localhost:8080/imagens',
+            data: {'url':$scope.url}
+        }).then(function successCallback(response) {
+            alert("sucesso!!"),
+            buscarImagens(),
+            $scope.url="";
+        }, function errorCallback(data, status, headers, config, statusText , xhrStatus ) {
+            console.info("deu ruim");
+        });
+    }
+
     var init = function(){
         buscarImagens();
     }
