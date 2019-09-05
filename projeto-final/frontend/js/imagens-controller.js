@@ -7,7 +7,7 @@ app.controller('ImagensController', function ($scope, $http) {
     var buscarImagens = function () {
         $http({
             method: 'GET',
-            url: 'http://localhost:8080/imagens'
+            url: 'http://172.16.2.7:8080/imagens'
         }).then(function successCallback(response) {
             $scope.imagens = response.data;
         }, function errorCallback(response) {
@@ -18,7 +18,7 @@ app.controller('ImagensController', function ($scope, $http) {
     var buscarAlbuns = function () {
         $http({
             method: 'GET',
-            url: 'http://localhost:8080/albuns'
+            url: 'http://172.16.2.7:8080/albuns'
         }).then(function successCallback(response) {
             $scope.albuns = response.data;
         }, function errorCallback(response) {
@@ -29,7 +29,7 @@ app.controller('ImagensController', function ($scope, $http) {
     $scope.remover = function (id) {
         $http({
             method: 'DELETE',
-            url: 'http://localhost:8080/imagens/' + id
+            url: 'http://172.16.2.7:8080/imagens/' + id
         }).then(function successCallback(response) {
             $("#imagem_" + id).hide();
         }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
@@ -42,7 +42,7 @@ app.controller('ImagensController', function ($scope, $http) {
         if ($scope.idImagem == null) {
             $http({
                 method: 'POST',
-                url: 'http://localhost:8080/imagens',
+                url: 'http://172.16.2.7:8080/imagens',
                 data: { 'url': $scope.url }
             }).then(function successCallback(response) {
                 alert("sucesso!!"),
@@ -56,7 +56,7 @@ app.controller('ImagensController', function ($scope, $http) {
         else {
             $http({
                 method: 'PUT',
-                url: 'http://localhost:8080/imagens/' + $scope.idImagem,
+                url: 'http://172.16.2.7:8080/imagens/' + $scope.idImagem,
                 data: { 'url': $scope.url }
             }).then(function successCallback(response) {
                 alert("sucesso!!"),
