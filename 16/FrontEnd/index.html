@@ -10,65 +10,24 @@
         <link rel="stylesheet" href="normalize.css">
     </head>
 
-<body>
+<body  ng-app="app">
     
     <nav id="menu">
-        Menu
+                <input type="text" ng-model="busca" />
+                Você está procurando: {{busca}}
     </nav>
 
         
-       <section id="album">
+       <section id="album" ng-controller="AlbunsController">
            <h2>Albuns</h2>
     
-            <article>
+            <article ng-repeat="album in albuns">
                     <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
+                    <span class="album">{{Albuns.nome}} </span>
+                    <span class="quantidade">{{albuns.imagens.length}} itens</span> 
                     <a href="#">x</a>
              </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-
+            
        </section>
       
             <hr>
@@ -165,8 +124,8 @@
        
         </section>
 
-        
-        <script src="main.js"> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script src="main.js"></script>
 
 
 </body>
