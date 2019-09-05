@@ -31,3 +31,11 @@
 #imagens .artigo-imagem .foto{
     width: 100%;
 }
+
+#imagens .artigo-imagem .foto:hover{
+    filter: opacity(50%);
+}
+
+#imagem .artigo-imagem:hover{
+    cursor: pointer;
+}
