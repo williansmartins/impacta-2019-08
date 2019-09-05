@@ -1,10 +1,11 @@
 <section id="fotos">
     <h2>Fotos</h2>
+    <a href="#" class="nova-imagem btn btn-success">Nova imagem</a>
     <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
-        <img class="foto" src="{{imagem.url}}" alt="">
+        <img class="foto" ng-src="{{imagem.url}}" alt="">
         <a href="javascript:void(0)" class="fechar" ng-click="remover(imagem.id)">
             <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
         </a>
     </article>
-    
+    <hr>
 </section>
