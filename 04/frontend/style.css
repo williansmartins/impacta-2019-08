@@ -8,7 +8,7 @@ body{
     color: white;
 }
 
-section article {
+#addAlbum {
     width: 200px;
     height: 41px;
     background-color: #cccccc;
@@ -21,13 +21,14 @@ section article {
     position: relative;
 }
 
-section article:hover{
+#addAlbum:hover{
     background-color: #a3a3a3;
     cursor: pointer;
 }
 
-section article img{
+#addAlbum .foto{
     margin-right: 5px;
+    width: 40px;
 }
 
 section .titulo{
@@ -35,11 +36,7 @@ section .titulo{
     position: absolute;
 }
 
-section#albuns {
-    overflow: hidden;
-}
-
-section#fotos {
+section#albuns, section#fotos, section#tags  {
     overflow: hidden;
 }
 
@@ -53,8 +50,27 @@ section#albuns .titulo{
 section .fechar{
     color: gray;
     position: absolute;
-    right: 1px;
-    top: 5px;
+    right: 8px;
+    top: 1px;
+    text-decoration: none;
+}
+
+article:hover .fechar{
+    display: block;
+}
+
+.fechar{
+    display: none;
+}
+
+section .fechar img{
+    width: 15px;
+}
+
+section .fechar{
+    position: absolute;
+    right: 2px;
+    top: 2px;
     text-decoration: none;
 }
 
@@ -63,3 +79,22 @@ section .quantidade{
     position: absolute;
     top: 24px;
 }
+
+a.tag{
+    background-color: gray;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 10px;
+    color: white;
+    margin: 8px;
+    font-size: 18px;
+}
+
+#addFoto .foto{
+    width: 20%;
+    float: left;
+    padding: 7px;
+}
+
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }

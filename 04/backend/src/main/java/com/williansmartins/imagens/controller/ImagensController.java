@@ -33,10 +33,13 @@ public class ImagensController {
 		return repository.findById(id);
 	}
 
-	@GetMapping("/tags/{tags}")
-	public Optional<Imagem> buscarPorTag(@PathVariable String tags) {
-		
-		return tag.split(",");.toString();
+	@GetMapping("/tag/{tags}")
+	public String buscarPorTag(@PathVariable String tags) {
+		String[] split = tags.split(",");
+		for (String tag : split) {
+			System.out.println("buscando imagem com tags: " + tag);
+		}
+		return tags;
 	}
 
 	@DeleteMapping("/{id}")
