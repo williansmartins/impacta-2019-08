@@ -7,52 +7,10 @@ body{
     height: 50px;
     color: white;
 }
-.artigo-imagem{
-    overflow: hidden;
-    margin: 10px;
-    float: left;
-    position: relative;
-    /* outline: solid 1px #006DAC; */
-    width: 100px;
-}
-
-.artigo-album {
-    width: 200px;
-    height: 41px;
-    background-color: #cccccc;
-    overflow: hidden;
-    margin: 10px;
-    float: left;
-    padding: 5px;
-    font-family: arial;
-    font-size: 14px;
-    position: relative;
-}
-
-.artigo-album:hover{
-    background-color: #a3a3a3;
-    cursor: pointer;
-}
-
-.artigo-album .foto{
-    margin-right: 5px;
-    width: 40px;
-}
 
 section .titulo{
     color: #006DAC;
     position: absolute;
-}
-
-section#albuns, section#fotos, section#tags  {
-    overflow: hidden;
-}
-
-section#fotos .titulo{
-    top: 18px;
-}
-section#albuns .titulo{
-    top: 6px;
 }
 
 section .fechar{
@@ -89,12 +47,6 @@ a.tag{
     color: white;
     margin: 8px;
     font-size: 18px;
-}
-
-
-
-.artigo-imagem .foto{
-    width: 100%;
 }
 
 article{
