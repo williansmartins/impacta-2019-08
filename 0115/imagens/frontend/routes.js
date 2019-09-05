@@ -1,5 +1,5 @@
 angular.module('app') 
-.config(function($routeProvider, $locationProvider) {
+.config(function($routeProvider) {
 	
 	$routeProvider.when('/', {
 		redirectTo: '/imagens'
@@ -18,7 +18,5 @@ angular.module('app')
 	.otherwise( {
 		redirectTo: '404'
 	});
-
-	//$locationProvider.html5Mode(true);
 
 });
