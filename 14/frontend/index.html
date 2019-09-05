@@ -34,9 +34,9 @@
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>
                       <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Definições</a>
+                        <a class="dropdown-item" href="#">Ajuda</a>
+                        <a class="dropdown-item" href="#">Log Out</a>
                       </div>
                     </li>
                   </ul>
@@ -48,7 +48,7 @@
               
    
     <section id="albuns" ng-controller="AlbunsController">
-        <h2>Albuns</h2>
+        <h2 class="title">Albuns</h2>
         <article ng-repeat="album in albuns">
             <img src="https://via.placeholder.com/40x40" alt="">
             <span class="titulo">{{album.nome}}</span>
@@ -59,7 +59,7 @@
     </section>
     <hr>
     <section id="fotos">
-        <h2>Fotos</h2>
+        <h2 class="title">Fotos</h2>
         <article>
             <img src="https://via.placeholder.com/40x40" alt="">
             <span class="imgNome">IMG 1</span>
@@ -134,7 +134,7 @@
     </section>
     <hr>
     <section id="tags">
-        <h3>Tags</h3>
+        <h3 class="title">Tags</h3>
         <div class="tags">
             <a href="#">familia</a>
             <a href="#" class="x">X</a>
