@@ -1,6 +1,7 @@
 app.controller('ImagensController', function ($scope, $http) {
 
     $scope.imagens = new Object();
+    $scope.albuns = new Object();
 
 
     var buscarImagens = function () {
@@ -9,6 +10,17 @@ app.controller('ImagensController', function ($scope, $http) {
             url: 'http://localhost:8080/imagens'
         }).then(function successCallback(response) {
             $scope.imagens = response.data;
+        }, function errorCallback(response) {
+            console.info("deu ruim");
+        });
+    }
+
+    var buscarAlbuns = function () {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8080/albuns'
+        }).then(function successCallback(response) {
+            $scope.albuns = response.data;
         }, function errorCallback(response) {
             console.info("deu ruim");
         });
@@ -61,12 +73,11 @@ app.controller('ImagensController', function ($scope, $http) {
         console.info(imagem);
         $scope.url = imagem.url;
         $scope.idImagem=imagem.id;
-
-
     }
 
     var init = function () {
     buscarImagens();
+    buscarAlbuns();
 }
 
 init();
