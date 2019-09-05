@@ -6,40 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
-    
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body ng-app="app">
-    <nav id=menu>
+    
+    <nav id="menu">
         <input type="text" ng-model="busca" />
         Você está procurando: {{busca}}
         <ul>
-            <li><a href="#!/imagens">Imagens</a> </li>
-            <li><a href="#!/albuns">Albuns</a> </li>
+            <li><a href="/projeto-final/frontend/#!/imagens">Imagens</a> </li>
+            <li><a href="/projeto-final/frontend/#!/albuns">Albuns</a> </li>
         </ul>
     </nav>
 
     <div ng-view></div>
-    <hr>
-    
-    <hr>
-    
-    <hr>
-    <br>
-    <br>
 
+    
+    <hr>
+    
+    <hr>
+    
+    <hr>
+    <br>
+    <br>
+    
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-    <script src="//code.angularjs.org/snapshot/angular-route.js"></script>
+    <script src="https://code.angularjs.org/snapshot/angular-route.js"></script>
     <script src="main.js"></script>
     <script src="albuns-controller.js"></script>
     <script src="imagens-controller.js"></script>
     <script src="routes.js"></script>
 </body>
+
 </html>

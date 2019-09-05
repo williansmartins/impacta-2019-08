@@ -14,7 +14,7 @@ public class Tag {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String tagNome;
+	private String tag;
 	@ManyToMany(mappedBy = "tags")
 	private List<Imagem> imagens = new ArrayList<Imagem>();
 	
@@ -23,7 +23,7 @@ public class Tag {
 	}
 	
 	public Tag(String tag) {
-		this.tagNome = tag;
+		this.tag = tag;
 	}
 
 	public Long getId() {
@@ -32,6 +32,14 @@ public class Tag {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
 	}
 	
 	public List<Imagem> getImagens() {
@@ -42,18 +50,9 @@ public class Tag {
 		this.imagens = imagens;
 	}
 
-	public String getTagNome() {
-		return tagNome;
-	}
-
-	public void setTagNome(String tagNome) {
-		this.tagNome = tagNome;
-	}
-
 	@Override
 	public String toString() {
-		return "Tag [id= " + id + ", tagNome= " + tagNome + ", imagens= " + imagens + "]";
+		return "Tag [id=" + id + ", tag=" + tag + ", imagens=" + imagens + "]";
 	}
-	
-	
+
 }

@@ -19,4 +19,6 @@ angular.module('app')
 		redirectTo: '404'
 	});
 
+	//$locationProvider.html5Mode(true);
+
 });
