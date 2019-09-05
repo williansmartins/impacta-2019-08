@@ -13,28 +13,30 @@ import com.williansmartins.imagens.model.Tag;
 import com.williansmartins.imagens.repository.ImagensRepository;
 import com.williansmartins.imagens.repository.TagsRepository;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-public class TagsApplicationTests {
+public class TagsTests {
 
 	@Autowired
 	TagsRepository tagRepository;
-
+	
 	@Autowired
 	ImagensRepository imagemRepository;
-
+	
 	@Test
 	public void inserir() {
-		// criacao da tag
+		//criacao da tag
 		Tag tag1 = new Tag("familia");
 		Tag tag2 = new Tag("amigos");
 		Tag tag3 = new Tag("esporte");
-
-		// criacao da imagens
+		
+		//criacao da imagens
 		Imagem imagem1 = new Imagem("http://www.williansmartins1.com", tag1, tag2, tag3);
 		imagemRepository.save(imagem1);
 
 	}
 
+	
 }
