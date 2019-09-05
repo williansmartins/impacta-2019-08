@@ -19,11 +19,11 @@
     <section id="albuns" ng-controller="AlbunsController">
         <h2>Álbuns</h2>
         
-        <article ng-repeat="album in albuns" id="addAlbum">
+        <article ng-repeat="album in albuns" class="artigo-album" id="album_{{album.id}}">
             <img class="foto" src="{{album.imagens[0].url}}" alt="">
             <span class="titulo">{{album.nome}}</span>
             <span class="quantidade">{{album.imagens.length}} itens</span>
-            <a href="#" class="fechar">
+            <a href="javascript:void(0)" class="fechar" ng-click="remover(album.id)">
                 <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
             </a>
         </article>
@@ -32,12 +32,11 @@
     <hr>
     <section id="fotos" ng-controller="ImagensController">
         <h2>Fotos</h2>
-        <article class="grid" ng-repeat="imagem in imagens" id="addFoto">
-            <img class="foto grid-item--width2" src="{{imagem.url}}" alt="">
-            <a href="#" class="fechar">
+        <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
+            <img class="foto" src="{{imagem.url}}" alt="">
+            <a href="javascript:void(0)" class="fechar" ng-click="remover(imagem.id)">
                 <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
             </a>
-            
         </article>
         
     </section>
@@ -74,7 +73,6 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="main.js"></script>
     <script src="albuns-controller.js"></script>
     <script src="imagens-controller.js"></script>
