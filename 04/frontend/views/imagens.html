@@ -1,10 +1,49 @@
-<section id="fotos">
-    <h2>Fotos</h2>
+<section id="imagens">
+    <h2>Imagens</h2>
+    <div class="form-group">
+        <input type="text" class="form-control url" placeholder="url" ng-model="url">
+        <a href="javascript:void(0)" class="nova-imagem btn btn-success" ng-click="salvar()">Gravar nova imagem</a>
+    </div>
     <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
-        <img class="foto" src="{{imagem.url}}" alt="">
-        <a href="javascript:void(0)" class="fechar" ng-click="remover(imagem.id)">
+        <img class="foto" ng-src="{{imagem.url}}" alt="">
+        <a href="javascript:void(0)" class="fechar hide" ng-click="remover(imagem.id)">
             <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
         </a>
+        <a href="javascript:void(0)" class="editar hide" ng-click="editar(imagem)">
+            <img src="img/pencil.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="editar hide " ng-click="editar(imagem)" data-toggle="modal"
+            data-target="#modalAlbuns">
+            ADD
+        </a>
     </article>
-    
+    <hr>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalAlbuns" tabindex="-1" role="dialog" aria-labelledby="modalAlbunsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAlbunsLabel">Escolha um Álbum</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+               
+                    <ul>
+                        <li ng-repeat="album in albuns">
+                            <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
+                            {{album.nome}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar Mudanças</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
