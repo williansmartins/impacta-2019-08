@@ -1,5 +1,5 @@
 var app = angular.module('app', []);
-app.controller('AlbunsController', function($scope,) {
+app.controller('AlbunsController', function($scope) {
     $scope.albuns = [
         {
             "nome" : "valor1"
@@ -13,10 +13,6 @@ app.controller('AlbunsController', function($scope,) {
         {
             "nome" : "valor2"
         },
-        {
-            "nome" : "valor2"
-        }
     ];
 
 });
-
