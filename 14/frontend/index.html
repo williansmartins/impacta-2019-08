@@ -8,86 +8,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
-<body>
+<bod0 ng-app="app">
     <nav id="menu">
-        menu
+        <a href="index.html"><img src="https://via.placeholder.com/150x35" alt="logo" class="logo"></a>
+        <input type="text" ng-model="busca" class="buscar"/>
+        <a href="#"><img src="https://www.seekpng.com/png/full/920-9209972_magnifying-glass-png-white-search-icon-white-png.png" alt="lupa" class="lupa"></a>
+        <a href="#"><img src="https://www.materialui.co/materialIcons/content/add_circle_grey_192x192.png" alt="add" class="add"></a>
+        <a href="#"><img src="https://21thirteen.com/wp-content/uploads/2016/03/hamburger-menu.jpg" alt="opções" class="opcoes"></a>
+        
     </nav>
-    <section id="albuns">
+    <section id="albuns" ng-controller="AlbunsController">
         <h2>Albuns</h2>
-        <article>
+        <article ng-repeat="album in albuns">
             <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
+            <span class="titulo">{{album.nome}}</span>
             <span class="quantidade">Fotos: 35</span>
             <a href="#" class="x">X</a>
         </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/40x40" alt="">
-            <span class="titulo">Album: Família</span>
-            <span class="quantidade">Fotos: 35</span>
-            <a href="#" class="x">X</a>
-        </article>
+        
     </section>
     <hr>
     <section id="fotos">
@@ -193,6 +134,8 @@
         </div>
 
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
