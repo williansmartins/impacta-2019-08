@@ -12,7 +12,7 @@ app.controller('ImagensController', function($scope, $http) {
             $scope.imagens = response.data;
         }, function errorCallback(response) {
             console.info("deu ruim");
-        });
+        }); 
     }
 
     $scope.remover = function(id){
