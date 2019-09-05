@@ -1,70 +1,89 @@
-#menu{
-    background-color:black;
+body{
+    background-color: white;
+    font-family: arial;
+}
+#menu {
+    background-color: black;
     height: 50px;
     color: white;
 }
 
-body{
-    background-color: white;
-}
 
-article img{
-    margin-right: 5px;
-
-}
-
-article{
-    background-color: rgb(184, 183, 183);
+.artigo-album {
     width: 200px;
     height: 41px;
-    border: solid 1px gray;
+    background-color: #cccccc;
     overflow: hidden;
     margin: 10px;
     float: left;
     padding: 5px;
-    position: relative;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: arial;
     font-size: 14px;
-    border-radius: 5px;
+    position: relative;
 }
 
-article:hover{
-    background-color: rgb(124, 122, 122);
+.artigo-imagem{
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    position: relative;
+    width: 100px;
+}
+
+.artigo-album:hover{
+    background-color: #a3a3a3;
     cursor: pointer;
 }
 
-.album{
-    color: #006dac;
-    position: absolute;
-    font-weight: bold;
-
+.artigo-album .foto{
+    margin-right: 5px;
+    width: 40px;
 }
 
-.quantidade{
-    color:  black;
-}
-
-.imagem{
-    color:black;
+section .titulo{
+    color: #006DAC;
     position: absolute;
 }
 
-#album{
+section#albuns, section#fotos, section#tags  {
     overflow: hidden;
 }
 
-#fotos{
-    overflow: hidden;
+section#fotos .titulo{
+    top: 18px;
 }
-a {
+section#albuns .titulo{
+    top: 6px;
+}
+
+section .fechar{
     color: gray;
-    text-decoration: none;
     position: absolute;
-    top: 0px;
-    right: 2px;
+    right: 8px;
+    top: 1px;
+    text-decoration: none;
 }
 
-.tag{
+article:hover .fechar{
+    display: block;
+}
+
+.fechar{
+     display: none; 
+}
+
+section .fechar img{
+    width: 15px;
+}
+
+section .quantidade{
+    color: #006DAC;
+    position: absolute;
+    top: 24px;
+}
+
+a.tag{
+    text-decoration: none;
     background-color: rgb(184, 183, 183);
     color:black;
     width: auto;
@@ -80,8 +99,19 @@ a {
     text-align: center;
 }
 
-.tag:hover{
+a.tag:hover{
     background-color: rgb(124, 122, 122);
     cursor: pointer; 
 }
 
+.artigo-imagem .foto{
+    width: 100%;
+}
+
+article{
+    position: relative;
+}
+
+@keyframes abrir{
+    0% { }
+}
