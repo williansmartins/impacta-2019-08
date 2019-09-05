@@ -12,7 +12,7 @@
         <a href="javascript:void(0)" class="editar hide" ng-click="editar(imagem)">
             <img src="img/pencil.png" alt="">
         </a>
-        <a href="javascript:void(0)" class="editar hide " ng-click="editar(imagem)" data-toggle="modal"
+        <a href="javascript:void(0)" class="editar hide " data-toggle="modal"
             data-target="#modalAlbuns">
             ADD
         </a>
@@ -34,8 +34,8 @@
                
                     <ul>
                         <li ng-repeat="album in albuns">
-                            <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
-                            {{album.nome}}
+                            <img src="{{album.imagens[0].url}}" width="45px" alt="">
+                            {{album.nome}} quantidade {{album.imagens.length}}
                         </li>
                     </ul>
                 </div>
