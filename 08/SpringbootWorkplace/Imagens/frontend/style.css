@@ -1,3 +1,4 @@
+
 #menu{
     background-color: blueviolet;
     height: 50px;
@@ -9,23 +10,47 @@ body{
 
 article{
     width: 200px;
-    height: 42px;
+    height: 41px;
     outline: solid 1px gray;
     overflow: hidden;
     margin: 10px;
     float: left;
     padding: 5px;
     position: relative;
+    font-size: 14px;
+    font-family: Arial;
 }
 hr{
-    margin-inline-start: 50px;
-    display: inline;
+    margin-right: 5px;
 }
 article img{
    margin-right: 5px;
 
 }
+article:hover{
+    cursor: pointer;
+    background-color: cadetblue;
+}
 .titulo{
     position: absolute;
-    color: black
+    color: #006DAC;
+}
+.quantidade{
+    color: #006DAC;
+    position: absolute;
+    top: 24px;
+}
+
+#albuns{
+overflow: hidden;
+}
+#fotos{
+overflow: hidden;
+}
+.fechar {
+    position: absolute;
+    left: 197px;
+    top: 1px;
+    text-decoration: none;
+    color: darkgray;
 }

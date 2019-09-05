@@ -7,8 +7,16 @@ body{
     height: 50px;
     color: white;
 }
+.artigo-imagem{
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    position: relative;
+    /* outline: solid 1px #006DAC; */
+    width: 100px;
+}
 
-section article {
+.artigo-album {
     width: 200px;
     height: 41px;
     background-color: #cccccc;
@@ -21,13 +29,14 @@ section article {
     position: relative;
 }
 
-section article:hover{
+.artigo-album:hover{
     background-color: #a3a3a3;
     cursor: pointer;
 }
 
-section article img.foto{
+.artigo-album .foto{
     margin-right: 5px;
+    width: 40px;
 }
 
 section .titulo{
@@ -59,18 +68,11 @@ article:hover .fechar{
 }
 
 .fechar{
-    display: none;
+     display: none; 
 }
 
 section .fechar img{
     width: 15px;
-}
-
-section .fechar{
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    text-decoration: none;
 }
 
 section .quantidade{
@@ -87,4 +89,14 @@ a.tag{
     color: white;
     margin: 8px;
     font-size: 18px;
+}
+
+
+
+.artigo-imagem .foto{
+    width: 100%;
+}
+
+article{
+    position: relative;
 }

@@ -10,65 +10,24 @@
         <link rel="stylesheet" href="normalize.css">
     </head>
 
-<body>
+<body  ng-app="app">
     
     <nav id="menu">
-        Menu
+                <input type="text" ng-model="busca" />
+                Você está procurando: {{busca}}
     </nav>
 
         
-       <section id="album">
+       <section id="album" ng-controller="AlbunsController">
            <h2>Albuns</h2>
     
-            <article>
+            <article ng-repeat="album in albuns">
                     <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
+                    <span class="album">{{Albuns.nome}} </span>
+                    <span class="quantidade">{{albuns.imagens.length}} itens</span> 
                     <a href="#">x</a>
              </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-            <article>
-                    <img src="http://lorempixel.com/40/40/"alt="">
-                    <span class="album">Album Familia </span>
-                    <span class="quantidade">Fotos 35</span> 
-                    <a href="#">x</a>
-             </article>
-
+            
        </section>
       
             <hr>
@@ -126,18 +85,48 @@
 
         <section id="tags">
              <h2>Tags</h2>
-       <a href="#" class="tag">familia</a> 
-       <a href="#" class="tag">california</a>
-       <a href="#" class="tag">disney</a>
-       <a href="#" class="tag">doguinho</a>
-       <a href="#" class="tag">mae</a>
-       <a href="#" class="tag">namorado</a>
-       <a href="#" class="tag">eu</a>
-       <a href="#" class="tag">natureza</a>
-       <a href="#" class="tag">portugal</a>
-       <a href="#" class="tag">shshsusjaikaisdhdheau</a>
+       <a href="#" class="tag">
+               <span>Familia</span>
+               <span>x</span>
+       </a> 
+       <a href="#" class="tag">
+               <span>california</span>
+               <span>x</span>
+       </a>
+       <a href="#" class="tag">
+               <span>disney</span>
+               <span>x</span>
+       </a>
+       <a href="#" class="tag">
+               <span>doguinho</span>
+               <span>x</span>
+       </a>
+       <a href="#" class="tag">
+               <span>mae</span>
+               <span>x</span>
+       </a>
+       <a href="#" class="tag">
+               <span>namorado</span>
+               <span>x</span>
+       </a>
+       <a href="#" class="tag">
+               <span>eu</span>
+               <span>x</span>
+       </a>
+       <a href="#" class="tag">
+               <span>naturea</span>
+               <span>x</span>
+       </a>
+       <a href="#" class="tag">
+               <span>portugal</span>
+               <span>x</span>
+       </a>
        
         </section>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script src="main.js"></script>
+
 
 </body>
 
