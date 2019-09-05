@@ -6,10 +6,10 @@
     </div>
     <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
         <img class="foto" ng-src="{{imagem.url}}" alt="">
-        <a href="javascript:void(0)" class="fechar" ng-click="remover(imagem.id)">
+        <a href="javascript:void(0)" class="fechar hide" ng-click="remover(imagem.id)">
             <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
         </a>
-        <a href="javascript:void(0)" class="editar" ng-click="editar(imagem)">
+        <a href="javascript:void(0)" class="editar hide" ng-click="editar(imagem)">
                 <img src="img/pencil.png" alt="">
             </a>
     </article>
