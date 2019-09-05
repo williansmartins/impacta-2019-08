@@ -1,14 +1,15 @@
-app.controller('ImagensController', function($scope, $http) {
+app.controller('TagsController', function($scope, $http) {
    
-    $scope.imagens=new Object();   
+    $scope.tags=new Object();   
 
   
-    var buscarImagens = function(){
+    var buscarTags = function(){
         $http({
             method: 'GET',
-            url: 'http://localhost:8080/imagens'
+            url: 'http://localhost:8080/tags'
         }).then(function successCallback(response) {
-            $scope.imagens = response.data;
+            console.info(response);
+            $scope.tags = response.data;
         }, function errorCallback(response) {
             console.info("deu ruim");
         });
@@ -17,16 +18,17 @@ app.controller('ImagensController', function($scope, $http) {
     $scope.remover = function(id){
         $http({
             method: 'DELETE',
-            url: 'http://localhost:8080/imagens/' + id
+            url: 'http://localhost:8080/tags/' + id
         }).then(function successCallback(response) {
-            $("#imagem_" + id).hide();
+            console.info("deu bom");
+            $("#tags_" + id).hide();
         }, function errorCallback(data, status, headers, config, statusText , xhrStatus ) {
             console.info("deu ruim");
         });
     }
-
+    
     var init = function(){
-        buscarImagens();
+        buscarTags();
     }
 
     init();
