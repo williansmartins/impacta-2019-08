@@ -1,5 +1,7 @@
 package com.matheuswendel.imagens.controller;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,7 @@ public class TagsController {
 //		System.out.println("buscando tag com id: " + id);
 //		CustomerDAO dao = new CustomerDAO();
 //
+		Map<String, Integer> teste = (Map<String, Integer>) new HashMap<>().put("mathsus", 10);
 		Long idParaFuncao = Long.parseLong(id);
 		return repository.findById(idParaFuncao);
 		
