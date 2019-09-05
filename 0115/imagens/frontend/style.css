@@ -7,8 +7,16 @@ body{
     height: 50px;
     color: white;
 }
+.artigo-imagem{
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    position: relative;
+    /* outline: solid 1px #006DAC; */
+    width: 100px;
+}
 
-#addAlbum {
+.artigo-album {
     width: 200px;
     height: 41px;
     background-color: #cccccc;
@@ -21,12 +29,12 @@ body{
     position: relative;
 }
 
-#addAlbum:hover{
+.artigo-album:hover{
     background-color: #a3a3a3;
     cursor: pointer;
 }
 
-#addAlbum .foto{
+.artigo-album .foto{
     margin-right: 5px;
     width: 40px;
 }
@@ -60,18 +68,11 @@ article:hover .fechar{
 }
 
 .fechar{
-    display: none;
+     display: none; 
 }
 
 section .fechar img{
     width: 15px;
-}
-
-section .fechar{
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    text-decoration: none;
 }
 
 section .quantidade{
@@ -90,11 +91,12 @@ a.tag{
     font-size: 18px;
 }
 
-#addFoto .foto{
-    width: 20%;
-    float: left;
-    padding: 7px;
+
+
+.artigo-imagem .foto{
+    width: 100%;
 }
 
-.grid-item { width: 200px; }
-.grid-item--width2 { width: 400px; }
+article{
+    position: relative;
+}

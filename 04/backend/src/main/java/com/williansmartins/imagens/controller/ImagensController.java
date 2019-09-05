@@ -17,7 +17,6 @@ import com.williansmartins.imagens.repository.ImagensRepository;
 
 @RestController
 @RequestMapping("/imagens")
-
 public class ImagensController {
 
 	@Autowired
@@ -30,9 +29,10 @@ public class ImagensController {
 
 	@GetMapping("/{id}")
 	public Optional<Imagem> buscarUm(@PathVariable Long id) {
+		System.out.println("buscando imagem com id: " + id);
 		return repository.findById(id);
 	}
-
+	
 	@GetMapping("/tag/{tags}")
 	public String buscarPorTag(@PathVariable String tags) {
 		String[] split = tags.split(",");
@@ -43,15 +43,14 @@ public class ImagensController {
 	}
 
 	@DeleteMapping("/{id}")
-	public String removerUm(@PathVariable Long id) {
+	public ResponseObject removerUm(@PathVariable Long id) {
 		try {
 			repository.deleteById(id);
-			return "ok";
+			return new ResponseObject(200, "ok");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "nok";
+			return new ResponseObject(500, "nok");
 		}
-
 	}
 
 	@PostMapping
@@ -61,13 +60,11 @@ public class ImagensController {
 
 	@PutMapping("/{id}")
 	public Imagem atualizar(@RequestBody Imagem imagem, @PathVariable Long id) {
-
-		if (repository.existsById(id)) {
+		
+		if(repository.existsById(id)) {
 			imagem.setId(id);
-			repository.save(imagem);
-			return imagem;
-		} else {
-
+			return repository.save(imagem);
+		}else {
 			return new Imagem();
 		}
 	}
