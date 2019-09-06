@@ -6,7 +6,7 @@
     </div>
 
     <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
-        <img class="foto" ng-src="{{imagem.url}}" alt="" data-toggle="modal" data-target="#modalImagem" ng-click="editar(imagem)">
+        <img class="foto" ng-src="{{imagem.url}}" alt="" data-toggle="modal" data-target="#modalImagem" ng-click="ampliar(imagem)">
         <a href="javascript:void(0)" class="fechar hide" ng-click="remover(imagem.id)">
             <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
         </a>
@@ -20,8 +20,7 @@
     <hr>
 
     <!-- Modal -->
-    <div class="modal fade" id="modalAlbuns" tabindex="-1" role="dialog" aria-labelledby="modalAlbunsLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="modalAlbuns" tabindex="-1" role="dialog" aria-labelledby="modalAlbunsLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -35,11 +34,8 @@
                     <ul class="lista">
                         <li ng-repeat="album in albuns" class="album">
                             <div class="wrapper-imagem">
-                                <img class="album-imagem" ng-if="album.imagens[0].url" src="{{album.imagens[0].url}}"
-                                    height="60px" alt="">
-                                <img class="album-imagem" ng-if="!album.imagens[0].url"
-                                    src="https://media.tenor.com/images/36e2f86ffaa3d8140a6ea33d864e3914/tenor.gif"
-                                    height="60px" alt="">
+                                <img class="album-imagem" ng-if="album.imagens[0].url" src="{{album.imagens[0].url}}" height="60px" alt="">
+                                <img class="album-imagem" ng-if="!album.imagens[0].url" src="https://media.tenor.com/images/36e2f86ffaa3d8140a6ea33d864e3914/tenor.gif" height="60px" alt="">
                             </div>
                             <div class="album-detalhes">
                                 <span class="nome">{{album.nome}}</span>
@@ -61,9 +57,8 @@
 
     <!-- MODAL EXIBIR IMAGEM -->
 
-    <div class="modal fade imagemExibindo" id="modalImagem" tabindex="-1" role="dialog" aria-labelledby="modalImagensLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document" >
+    <div class="modal fade imagemExibindo" id="modalImagem" tabindex="-1" role="dialog" aria-labelledby="modalImagensLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalIMagensLabel">Sua imagem:</h5>
@@ -72,15 +67,15 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div>
 
-                        <img class="imagemExibindo " ng-src="{{url}}" alt="">
-                    </div>
-                </div> 
+
+                    <img class="imagemExibindo " ng-src="{{urlModal}}" alt="">
+
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 </section>
