@@ -44,12 +44,13 @@ section .editar img{
   display: none; 
 }
 
-#logotipo{
 
-height: 60px;
+
+section .quantidade{
+    color: #006DAC;
+    position: absolute;
+    top: 24px;
 }
-
-
 
 a.tag{
     background-color: gray;
@@ -62,11 +63,9 @@ a.tag{
 }
 
 article{
-    position: relative
-
-.pesquisarID{
-    margin-left: 10px;
+    position: relative;
 }
+
 
 .saturate { filter: saturate(3); }
 .grayscale { filter: grayscale(100%); }
@@ -77,4 +76,3 @@ article{
 .sepia { filter: sepia(100%); }
 .huerotate { filter: hue-rotate(180deg); }
 .rss.opacity { filter: opacity(50%); }
-

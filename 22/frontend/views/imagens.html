@@ -2,7 +2,7 @@
     <h2>Imagens</h2>
     <div class="form-group">
         <input type="text" class="form-control url" placeholder="url" ng-model="url">
-        <a href="javascript:void(0)" class="nova-imagem btn btn-success" ng-click="salvar()">Gravar nova imagem</a>
+        <button href="javascript:void(0)" class="nova-imagem btn btn-success" ng-click="salvar()" ng-disabled="!url">Gravar nova imagem</a>
     </div>
     <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
         <img class="foto" ng-src="{{imagem.url}}" alt="">
@@ -35,7 +35,9 @@
                     <ul>
                         <li ng-repeat="album in albuns">
                             <img src="{{album.imagens[0].url}}" width="45px" alt="">
-                            {{album.nome}} quantidade {{album.imagens.length}}
+                           <span>{{album.nome}}</span>
+                           <span ng-if="album.imagens.length = 1">{{album.imagens.length}} item</span> 
+                           <span ng-if="album.imagens.length > 1">{{album.imagens.length}} itens</span> 
                         </li>
                     </ul>
                 </div>
