@@ -36,13 +36,13 @@ public class AlbunsController {
 	}
 
 	@DeleteMapping("/{id}")
-	public String removerUm(@PathVariable Long id) {
+	public ResponseObject removerUm(@PathVariable Long id) {
 		try {
 			repository.deleteById(id);
-			return "ok";
+			return new ResponseObject(200, "ok");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "nok";
+			return new ResponseObject(500, "nok");
 		}
 	}
 

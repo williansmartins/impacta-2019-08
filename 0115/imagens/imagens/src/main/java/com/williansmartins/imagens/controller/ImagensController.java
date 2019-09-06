@@ -33,20 +33,23 @@ public class ImagensController {
 		return repository.findById(id);
 	}
 	
-	/*@GetMapping("/{id}")
-	public Optional<Imagem> buscarPorTag(@queryParams Long id) {
-		System.out.println("buscando imagem com id: " + id);
-		return repository.findById(id);
-	}*/
+	@GetMapping("/tag/{tags}")
+	public String buscarPorTag(@PathVariable String tags) {
+		String[] split = tags.split(",");
+		for (String tag : split) {
+			System.out.println("buscando imagem com tags: " + tag);
+		}
+		return tags;
+	}
 
 	@DeleteMapping("/{id}")
-	public String removerUm(@PathVariable Long id) {
+	public ResponseObject removerUm(@PathVariable Long id) {
 		try {
 			repository.deleteById(id);
-			return "ok";
+			return new ResponseObject(200, "ok");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "nok";
+			return new ResponseObject(500, "nok");
 		}
 	}
 

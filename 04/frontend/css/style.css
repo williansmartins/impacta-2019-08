@@ -40,24 +40,11 @@ article:hover .editar{
 section .editar img{
     width: 15px;
 }
-
-section .add{
-    color: gray;
-    position: absolute;
-    right: 8px;
-    top: 35px;
-    text-decoration: none;
-}
-
-article:hover .add{
-    display: block;
-}
-section .add img{
-    width: 15px;
-}
 .hide{
   display: none; 
 }
+
+
 
 section .quantidade{
     color: #006DAC;
