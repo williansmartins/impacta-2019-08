@@ -1,8 +1,7 @@
 app.controller('AlbunsController', function ($scope, $http) {
     $scope.albuns = new Object();
-    $scope.albumNome = "Criar album";
-     
- 
+
+
 
     $scope.remover = function (id) {
         $http({
@@ -28,7 +27,6 @@ app.controller('AlbunsController', function ($scope, $http) {
     }
 
     $scope.salvarAlbum = function (){
-        $scope.albumNome = "Criar album";
         if ($scope.idAlbum == null) {
             $http({
                 method: 'POST',
@@ -38,7 +36,6 @@ app.controller('AlbunsController', function ($scope, $http) {
                 alert("sucesso!!"),
                     buscarAlbuns(),
                     $scope.nome = "";
-                    $scope.albumNome = "Gravar Album";
             }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
                 console.info("deu ruim");
             });
@@ -48,12 +45,11 @@ app.controller('AlbunsController', function ($scope, $http) {
             $http({
                 method: 'PUT',
                 url: 'http://172.16.2.7:8080/albuns/' + $scope.idAlbum,
-                data: { 'nome': $scope.nomeDoAlbum },
+                data: { 'nome': $scope.nomeDoAlbum }
             }).then(function successCallback(response) {
                 alert("sucesso!!"),
                     buscarAlbuns(),
                     $scope.nome = "";
-                    $scope.albumNome = "Gravar Album";
             }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
                 console.info("deu ruim");
             });
@@ -65,7 +61,6 @@ app.controller('AlbunsController', function ($scope, $http) {
         console.info(album);
         $scope.nomeDoAlbum = album.nome;
         $scope.idAlbum = album.id;
-        $scope.albumNome = "Editar";
     }
 
     var init = function () {
