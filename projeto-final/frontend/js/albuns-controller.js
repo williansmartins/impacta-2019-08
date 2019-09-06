@@ -1,11 +1,8 @@
 app.controller('AlbunsController', function ($scope, $http) {
-    $scope.album = new Object();
     $scope.albuns = new Object();
     $scope.albumNome = "Criar album";
      
  
-
-
 
     $scope.remover = function (id) {
         $http({
