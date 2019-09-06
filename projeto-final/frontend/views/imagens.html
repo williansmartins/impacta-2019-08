@@ -32,12 +32,18 @@
                 </div>
                 <div class="modal-body">
                
-                    <ul>
-                        <li ng-repeat="album in albuns">
-                            <img src="{{album.imagens[0].url}}" width="45px" alt="">
-                            <span>{{album.nome}}</span> 
-                            <span ng-if="album.imagens.length<=1">{{album.imagens.length}} item</span> 
-                            <span ng-if="album.imagens.length>1">{{album.imagens.length}} itens</span> 
+                    <ul class="lista">
+                        <li ng-repeat="album in albuns" class="album">
+                            <div class="wrapper-imagem">
+                                <img class="album-imagem" ng-if="album.imagens[0].url" src="{{album.imagens[0].url}}" height="60px" alt="">
+                                <img class="album-imagem" ng-if="!album.imagens[0].url" src="https://media.tenor.com/images/36e2f86ffaa3d8140a6ea33d864e3914/tenor.gif" height="60px" alt="">
+                            </div>  
+                            <div class="album-detalhes">
+                                <span class="nome">{{album.nome}}</span> 
+                                
+                                <span class="quantidade" ng-if="album.imagens.length<=1">{{album.imagens.length}} item</span> 
+                                <span class="quantidade" ng-if="album.imagens.length>1">{{album.imagens.length}} itens</span> 
+                            </div>
                         </li>
                     </ul>
                 </div>

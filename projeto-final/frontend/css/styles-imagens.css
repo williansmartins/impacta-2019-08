@@ -36,6 +36,6 @@
     filter: opacity(50%);
 }
 
-#imagem .artigo-imagem:hover{
+#imagens #imagem .artigo-imagem:hover{
     cursor: pointer;
 }
