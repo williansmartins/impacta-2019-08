@@ -29,3 +29,13 @@
 #albuns .titulo{
     top: 6px;
 }
+
+#albuns .nomeDoAlbum{
+    width: 200px;
+    float: left;
+}
+
+#albuns .novo-album{
+    float: left;
+    margin-left: 5px;
+}
