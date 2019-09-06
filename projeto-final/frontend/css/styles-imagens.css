@@ -1,0 +1,60 @@
+#imagens{
+    overflow: hidden;
+}
+
+#imagens .titulo{
+    top: 18px;
+}
+
+#imagens .url{
+    width: 200px;
+    float: left;
+}
+#imagens .nova-imagem{
+    float: left;
+    margin-left: 5px;
+}
+
+#imagens .form-group{
+    height: 40px;
+}
+
+#imagens .artigo-imagem{
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    position: relative;
+    /* outline: solid 1px #006DAC; */
+    width: 100px;
+}
+
+#imagens .artigo-imagem .foto{
+    width: 100%;
+}
+
+#imagens .artigo-imagem .foto:hover{
+    filter: opacity(50%);
+}
+
+#imagens #imagem .artigo-imagem:hover{
+    cursor: pointer;
+}
+
+#imagens .artigo-imagem:hover{
+    cursor: pointer;
+}
+
+#imagens .add{
+    color: gray;
+    position: absolute;
+    right: 8px;
+    top: 35px;
+    text-decoration: none;
+}
+
+#imagens article:hover .add{
+    display: block;
+}
+#imagens .add img{
+    width: 15px;
+}

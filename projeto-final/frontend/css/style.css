@@ -1,0 +1,74 @@
+body{
+    background-color: white;
+    font-family: arial;
+}
+#menu {
+    background-color: rgb(73, 8, 116);
+    height: 50px;
+    color: white;
+}
+
+section .titulo{
+    color: #006DAC;
+    position: absolute;
+}
+
+section .fechar{
+    color: gray;
+    position: absolute;
+    right: 8px;
+    top: 1px;
+    text-decoration: none;
+}
+
+article:hover .fechar{
+    display: block;
+}
+section .fechar img{
+    width: 15px;
+}
+section .editar{
+    color: gray;
+    position: absolute;
+    right: 8px;
+    top: 17px;
+    text-decoration: none;
+}
+article:hover .editar{
+    display: block;
+}
+section .editar img{
+    width: 15px;
+}
+.hide{
+  display: none; 
+}
+
+
+
+
+
+a.tag{
+    background-color: gray;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 10px;
+    color: white;
+    margin: 8px;
+    font-size: 18px;
+}
+
+article{
+    position: relative;
+}
+
+
+.saturate { filter: saturate(3); }
+.grayscale { filter: grayscale(100%); }
+.contrast { filter: contrast(160%); }
+.brightness { filter: brightness(0.25); }
+.blur { filter: blur(3px); }
+.invert { filter: invert(100%); }
+.sepia { filter: sepia(100%); }
+.huerotate { filter: hue-rotate(180deg); }
+.rss.opacity { filter: opacity(50%); }

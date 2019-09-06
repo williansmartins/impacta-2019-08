@@ -29,8 +29,7 @@ public class ImagensController {
 	
 	@GetMapping("/{id}")
     public Optional<Imagem> buscarUm(@PathVariable Long id) {
-        System.out.println("buscando imagem com id: " + id);
-        
+       
 		return repository.findById(id);
     }
 	

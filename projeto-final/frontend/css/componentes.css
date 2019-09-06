@@ -1,0 +1,40 @@
+
+#imagens .modal-body .lista{
+    padding: 0px;
+}
+
+#imagens .modal-body .album-detalhes {
+    margin-left: 5px;
+    float: left;
+}
+
+#imagens .modal-body li.album{
+    overflow: hidden;
+    /* outline: solid 1px red; */
+    margin-bottom: 8px;
+}
+
+#imagem li.album .album-detalhes{
+    float: left;
+}
+
+#imagens .modal-body li.album .album-detalhes span{
+    display: block;
+}
+
+#imagens .modal-body li.album .album-detalhes span.nome{
+    color: #6666f9;
+    font-weight: bold;
+}
+
+#imagens .modal-body li.album .album-detalhes span.quantidade{
+    color: #6f6fa5;
+    font-size: 12px;
+}
+
+#imagens .modal-body li.album .wrapper-imagem {
+    width: 82px;
+    height: 60px;
+    float: left;
+    text-align: center;
+}

@@ -1,0 +1,47 @@
+#albuns .artigo-album {
+    width: 200px;
+    height: 41px;
+    background-color: #cccccc;
+    overflow: hidden;
+    margin: 10px;
+    float: left;
+    padding: 5px;
+    font-family: arial;
+    font-size: 14px;
+    position: relative;
+}
+
+#albuns .artigo-album:hover{
+    background-color: #a3a3a3;
+    cursor: pointer;
+}
+
+#albuns .artigo-album .foto{
+    margin-right: 5px;
+    width: 40px;
+}
+
+#albuns, section#tags  {
+    overflow: hidden;
+}
+
+
+#albuns .titulo{
+    top: 6px;
+}
+
+#albuns .nomeDoAlbum{
+    width: 200px;
+    float: left;
+}
+
+#albuns .novo-album{
+    float: left;
+    margin-left: 5px;
+}
+
+#albuns section .quantidade{
+    color: #006DAC;
+    position: absolute;
+    top: 24px;
+}

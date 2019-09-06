@@ -14,6 +14,7 @@ public class Album {
 	private String nome;
 	@ManyToMany
 	private List<Imagem> imagens;
+	
 
 	public Long getId() {
 		return id;

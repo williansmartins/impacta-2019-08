@@ -9,12 +9,20 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Album {
+<<<<<<< HEAD
 	@Id
 	@GeneratedValue
 	private Long id;
 	private String nome;
 
 	@ManyToMany
+=======
+
+	@Id @GeneratedValue
+	private Long id;
+	private String nome;
+	@ManyToMany()
+>>>>>>> dev
 	private List<Imagem> imagens;
 
 	public Long getId() {
@@ -32,6 +40,10 @@ public class Album {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> dev
 
 	public List<Imagem> getImagens() {
 		return imagens;
@@ -43,7 +55,11 @@ public class Album {
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "Album [id= " + id + ", nome= " + nome + ", imagens= " + imagens + "]";
+=======
+		return "Album [id=" + id + ", nome=" + nome + ", imagens=" + imagens + "]";
+>>>>>>> dev
 	}
 
 }

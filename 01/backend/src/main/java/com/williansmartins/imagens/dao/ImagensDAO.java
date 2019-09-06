@@ -1,5 +1,6 @@
 package com.williansmartins.imagens.dao;
 
+<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -46,5 +47,9 @@ public class ImagensDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+=======
+public class ImagensDAO {
+	 
+>>>>>>> dev
 
 }

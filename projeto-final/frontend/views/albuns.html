@@ -1,0 +1,19 @@
+<section id="albuns">
+    <h2>Álbuns</h2>
+    <div class="form-group">
+        <input type="text" class="form-control nomeDoAlbum" placeholder="Nome do álbum" ng-model="nomeDoAlbum">
+        <button class="novo-album btn btn-success" ng-click="salvarAlbum()" ng-disabled="!nomeDoAlbum">Criar novo álbum</button>
+    </div>
+    <article ng-repeat="album in albuns" class="artigo-album" id="album_{{album.id}}">
+        <img class="foto" ng-src="{{album.imagens[0].url}}" alt="">
+        <span class="titulo">{{album.nome}}-{{album.id}}</span>
+        <span class="quantidade">{{album.imagens.length}} itens</span>
+        <a href="javascript:void(0)" class="fechar hide" ng-click="remover(album.id)">
+            <img src="https://image.flaticon.com/icons/png/512/106/106830.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="editar hide" ng-click="editar(album)">
+            <img src="img/pencil.png" alt="">
+        </a>
+    </article>
+    <hr>
+</section>
