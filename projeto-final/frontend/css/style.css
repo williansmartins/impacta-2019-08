@@ -44,6 +44,11 @@ section .editar img{
   display: none; 
 }
 
+#logotipo{
+
+height: 60px;
+}
+
 
 
 
@@ -59,8 +64,7 @@ a.tag{
 }
 
 article{
-    position: relative;
-}
+    position: relative
 
 
 .saturate { filter: saturate(3); }
@@ -72,3 +76,4 @@ article{
 .sepia { filter: sepia(100%); }
 .huerotate { filter: hue-rotate(180deg); }
 .rss.opacity { filter: opacity(50%); }
+
