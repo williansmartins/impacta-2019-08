@@ -40,7 +40,6 @@ public class TagsController {
 //		System.out.println("buscando tag com id: " + id);
 //		CustomerDAO dao = new CustomerDAO();
 //
-		Map<String, Integer> teste = (Map<String, Integer>) new HashMap<>().put("mathsus", 10);
 		Long idParaFuncao = Long.parseLong(id);
 		return repository.findById(idParaFuncao);
 		
