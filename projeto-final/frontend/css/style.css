@@ -22,6 +22,8 @@ section .fechar{
 }
 
 article:hover .fechar{
+    filter: opacity(50%);
+    
     display: block;
 }
 section .fechar img{

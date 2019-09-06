@@ -75,6 +75,55 @@ app.controller('ImagensController', function ($scope, $http) {
         $scope.idImagem=imagem.id;
     }
 
+    $scope.procurarImagem = function (id) {
+        console.info(id);
+         
+        $scope.albuns.forEach(album => {
+            
+            album.checkbox =false;
+            album.imagens.forEach(imagem => {
+                if(id == imagem.id){
+                    console.info(album.nome);
+                    console.info(imagem);
+                    console.info("encontrei");
+                    album.checkbox = true;
+                }
+            });
+        });
+    }
+
+    $scope.adicionarImagem = function (){
+        if ($scope.idAlbum == null) {
+            $http({
+                method: 'PUT',
+                url: 'http://172.16.2.7:8080//albuns/',
+                data: { 'nome': $scope.nomeDoAlbum }
+            }).then(function successCallback(response) {
+                alert("sucesso!!"),
+                    buscarAlbuns(),
+                    $scope.nome = "";
+                    //$scope.album.imagem = id.imagem;
+            }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
+                console.info("deu ruim");
+            });
+        }
+
+        else {
+            $http({
+                method: 'PUT',
+                url: 'http://172.16.2.7:8080/albuns' + $scope.idAlbum,
+                data: { 'nome': $scope.nomeDoAlbum }
+            }).then(function successCallback(response) {
+                alert("sucesso!!"),
+                    buscarAlbuns(),
+                    $scope.nome = "";
+            }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
+                console.info("deu ruim");
+            });
+        }
+
+    }
+
     var init = function () {
     buscarImagens();
     buscarAlbuns();
