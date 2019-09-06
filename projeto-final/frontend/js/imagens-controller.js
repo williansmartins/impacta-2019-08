@@ -5,6 +5,25 @@ app.controller('ImagensController', function ($scope, $http) {
     $scope.albuns = new Object();
     $scope.nomeDoBotao = "Salvar Imagem";
 
+    $scope.buscarUmImagens = function () {
+        $http({
+            method: 'GET',
+            url: 'http://172.16.2.7:8080/imagens/' + $scope.pesquisar
+
+        }).then(function successCallback(response) {
+            if (response.data != null) {
+                $('#modalImagem').modal();
+                
+                $scope.objetao.url = response.data.url;
+                $scope.objetao.lista.push(response.data);
+            } else {
+                alert("deu ruim");
+            }
+        }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
+            console.info("deu ruim");
+        });
+    }
+
     var buscarImagens = function () {
         $http({
             method: 'GET',
