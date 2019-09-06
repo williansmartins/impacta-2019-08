@@ -1,7 +1,7 @@
 app.controller('ImagensController', function ($scope, $http) {
-
     $scope.imagens = new Object();
     $scope.albuns = new Object();
+    $scope.idImagem;
 
 
     var buscarImagens = function () {
@@ -25,6 +25,18 @@ app.controller('ImagensController', function ($scope, $http) {
             console.info("deu ruim");
         });
     }
+    $scope.buscarUm = function (id) {
+        $http({
+            method: 'GET',
+            url: 'http://172.16.2.7:8080/albuns/' + id,
+            data: { 'id': id }
+        }).then(function successCallback(response) {
+            $scope.albuns = response.data;
+        }, function errorCallback(response) {
+            console.info("deu ruim");
+        });
+    }
+
 
     $scope.remover = function (id) {
         $http({
@@ -72,17 +84,16 @@ app.controller('ImagensController', function ($scope, $http) {
     $scope.editar = function (imagem) {
         console.info(imagem);
         $scope.url = imagem.url;
-        $scope.idImagem=imagem.id;
+        $scope.idImagem = imagem.id;
     }
 
     $scope.procurarImagem = function (id) {
         console.info(id);
-         
         $scope.albuns.forEach(album => {
-            
-            album.checkbox =false;
+
+            album.checkbox = false;
             album.imagens.forEach(imagem => {
-                if(id == imagem.id){
+                if (id == imagem.id) {
                     console.info(album.nome);
                     console.info(imagem);
                     console.info("encontrei");
@@ -92,43 +103,30 @@ app.controller('ImagensController', function ($scope, $http) {
         });
     }
 
-    $scope.adicionarImagem = function (){
-        if ($scope.idAlbum == null) {
-            $http({
-                method: 'PUT',
-                url: 'http://172.16.2.7:8080//albuns/',
-                data: { 'nome': $scope.nomeDoAlbum }
-            }).then(function successCallback(response) {
-                alert("sucesso!!"),
-                    buscarAlbuns(),
-                    $scope.nome = "";
-                    //$scope.album.imagem = id.imagem;
-            }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
-                console.info("deu ruim");
-            });
-        }
+    $scope.pegarId = function (id) {
+        $scope.idImagem = id;
+        console.info($scope.idImagem);
+        return id;
+    }
 
-        else {
-            $http({
-                method: 'PUT',
-                url: 'http://172.16.2.7:8080/albuns' + $scope.idAlbum,
-                data: { 'nome': $scope.nomeDoAlbum }
-            }).then(function successCallback(response) {
-                alert("sucesso!!"),
-                    buscarAlbuns(),
-                    $scope.nome = "";
-            }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
-                console.info("deu ruim");
-            });
-        }
-
+    $scope.adicionarImagem = function (albumId) {
+        $http({
+            method: 'PUT',
+            url: 'http://172.16.2.7:8080/albuns/' + albumId + '/adicionar',
+            data: { 'id': $scope.idImagem }
+        }).then(function successCallback(response) {
+            
+            console.info("Sucesso");
+        }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
+            console.info("deu ruim");
+        });
     }
 
     var init = function () {
-    buscarImagens();
-    buscarAlbuns();
-}
+        buscarImagens();
+        buscarAlbuns();
+    }
 
-init();
+    init();
 
 });
