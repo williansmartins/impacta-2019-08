@@ -39,3 +39,6 @@
     float: left;
     margin-left: 5px;
 }
+#albuns .form-group {
+    height: 40px;
+}
