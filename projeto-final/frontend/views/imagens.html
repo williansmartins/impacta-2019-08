@@ -2,8 +2,9 @@
     <h2>Imagens</h2>
     <div class="form-group">
         <input type="text" class="form-control url" placeholder="url" ng-model="url">
-        <button class="nova-imagem btn btn-success" ng-click="salvar()" ng-disabled="!url">Gravar nova imagem</button>
+        <button class="nova-imagem btn btn-success" ng-click="salvar()" ng-disabled="!url">{{nomeDoBotao}}</button>
     </div>
+
     <article ng-repeat="imagem in imagens" class="artigo-imagem" id="imagem_{{imagem.id}}">
         <img class="foto" ng-src="{{imagem.url}}" alt="">
         <a href="javascript:void(0)" class="fechar hide" ng-click="remover(imagem.id)">
