@@ -46,8 +46,6 @@ section .editar img{
 
 
 
-
-
 a.tag{
     background-color: gray;
     text-decoration: none;
@@ -62,6 +60,9 @@ article{
     position: relative;
 }
 
+.pesquisarID{
+    margin-left: 10px;
+}
 
 .saturate { filter: saturate(3); }
 .grayscale { filter: grayscale(100%); }
