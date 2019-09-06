@@ -39,3 +39,9 @@
     float: left;
     margin-left: 5px;
 }
+
+#albuns section .quantidade{
+    color: #006DAC;
+    position: absolute;
+    top: 24px;
+}

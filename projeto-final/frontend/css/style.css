@@ -46,11 +46,7 @@ section .editar img{
 
 
 
-section .quantidade{
-    color: #006DAC;
-    position: absolute;
-    top: 24px;
-}
+
 
 a.tag{
     background-color: gray;
