@@ -74,6 +74,10 @@ app.controller('ImagensController', function ($scope, $http) {
         $scope.url = imagem.url;
         $scope.idImagem=imagem.id;
     }
+    /* $scope.ampliar = function (imagem) {
+        console.info(imagem);
+        $scope.url = imagem.url;
+    } */
 
     var init = function () {
     buscarImagens();
