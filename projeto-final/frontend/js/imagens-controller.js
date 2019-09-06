@@ -1,8 +1,9 @@
 app.controller('ImagensController', function ($scope, $http) {
 
+    //Carlos e Vitor dinamizando variaveis  
     $scope.imagens = new Object();
     $scope.albuns = new Object();
-
+    $scope.nomeDoBotao = "Salvar Imagem";
 
     var buscarImagens = function () {
         $http({
@@ -39,6 +40,7 @@ app.controller('ImagensController', function ($scope, $http) {
 
 
     $scope.salvar = function () {
+        $scope.nomeDoBotao = "Salvar Imagem";
         if ($scope.idImagem == null) {
             $http({
                 method: 'POST',
@@ -48,6 +50,7 @@ app.controller('ImagensController', function ($scope, $http) {
                 alert("sucesso!!"),
                     buscarImagens(),
                     $scope.url = "";
+                   //$scope.nomeImagem = "Salvar Imagem";
             }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
                 console.info("deu ruim");
             });
@@ -62,6 +65,7 @@ app.controller('ImagensController', function ($scope, $http) {
                 alert("sucesso!!"),
                     buscarImagens(),
                     $scope.url = "";
+                   // $scope.nomeImagem = "Salvar Imagem";
             }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
                 console.info("deu ruim");
             });
@@ -73,6 +77,7 @@ app.controller('ImagensController', function ($scope, $http) {
         console.info(imagem);
         $scope.url = imagem.url;
         $scope.idImagem=imagem.id;
+        $scope.nomeDoBotao = "Editar Imagem";
     }
     /* $scope.ampliar = function (imagem) {
         console.info(imagem);
