@@ -1,30 +1,10 @@
-app.controller('ImagensController', function($scope, $http) {
+app.controller('ImagensController', function ($scope, $http) {
 
-    //Carlos e Vitor dinamizando variaveis  
     $scope.imagens = new Object();
     $scope.albuns = new Object();
-    $scope.nomeDoBotao = "Salvar Imagem";
 
-    $scope.buscarUmImagens = function () {
-        $http({
-            method: 'GET',
-            url: 'http://172.16.2.7:8080/imagens/' + $scope.pesquisar
 
-        }).then(function successCallback(response) {
-            if (response.data != null) {
-                $('#modalImagem').modal();
-                
-                $scope.objetao.url = response.data.url;
-                $scope.objetao.lista.push(response.data);
-            } else {
-                alert("deu ruim");
-            }
-        }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
-            console.info("deu ruim");
-        });
-    }
-
-    var buscarImagens = function() {
+    var buscarImagens = function () {
         $http({
             method: 'GET',
             url: 'http://172.16.2.7:8080/imagens'
@@ -35,7 +15,7 @@ app.controller('ImagensController', function($scope, $http) {
         });
     }
 
-    var buscarAlbuns = function() {
+    var buscarAlbuns = function () {
         $http({
             method: 'GET',
             url: 'http://172.16.2.7:8080/albuns'
@@ -46,7 +26,7 @@ app.controller('ImagensController', function($scope, $http) {
         });
     }
 
-    $scope.remover = function(id) {
+    $scope.remover = function (id) {
         $http({
             method: 'DELETE',
             url: 'http://172.16.2.7:8080/imagens/' + id
@@ -58,8 +38,7 @@ app.controller('ImagensController', function($scope, $http) {
     }
 
 
-    $scope.salvar = function() {
-        $scope.nomeDoBotao = "Salvar Imagem";
+    $scope.salvar = function () {
         if ($scope.idImagem == null) {
             $http({
                 method: 'POST',
@@ -69,11 +48,12 @@ app.controller('ImagensController', function($scope, $http) {
                 alert("sucesso!!"),
                     buscarImagens(),
                     $scope.url = "";
-                //$scope.nomeImagem = "Salvar Imagem";
             }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
                 console.info("deu ruim");
             });
-        } else {
+        }
+
+        else {
             $http({
                 method: 'PUT',
                 url: 'http://172.16.2.7:8080/imagens/' + $scope.idImagem,
@@ -82,7 +62,6 @@ app.controller('ImagensController', function($scope, $http) {
                 alert("sucesso!!"),
                     buscarImagens(),
                     $scope.url = "";
-                // $scope.nomeImagem = "Salvar Imagem";
             }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
                 console.info("deu ruim");
             });
@@ -90,23 +69,17 @@ app.controller('ImagensController', function($scope, $http) {
 
     }
 
-    $scope.editar = function(imagem) {
+    $scope.editar = function (imagem) {
         console.info(imagem);
         $scope.url = imagem.url;
-        $scope.idImagem = imagem.id;
-        $scope.nomeDoBotao = "Editar Imagem";
-    }
-    $scope.ampliar = function(imagem) {
-        console.info(imagem);
-        $scope.urlModal = imagem.url;
+        $scope.idImagem=imagem.id;
     }
 
-    var init = function() {
-        buscarImagens();
-        buscarAlbuns();
-        dataDismiss();
-    }
+    var init = function () {
+    buscarImagens();
+    buscarAlbuns();
+}
 
-    init();
+init();
 
 });

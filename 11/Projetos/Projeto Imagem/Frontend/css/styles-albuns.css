@@ -1,6 +1,6 @@
 #albuns .artigo-album {
     width: 200px;
-    height: 45px;
+    height: 41px;
     background-color: #cccccc;
     overflow: hidden;
     margin: 10px;
@@ -9,10 +9,6 @@
     font-family: arial;
     font-size: 14px;
     position: relative;
-}
-
-#albuns .form-group{
-    height: 40px;
 }
 
 #albuns .artigo-album:hover{
