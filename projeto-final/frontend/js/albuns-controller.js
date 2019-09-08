@@ -7,7 +7,7 @@ app.controller('AlbunsController', function ($scope, $http) {
     $scope.remover = function (id) {
         $http({
             method: 'DELETE',
-            url: 'http://172.16.2.7:8080/albuns/' + id
+            url: host + '/albuns/' + id
         }).then(function successCallback(response) {
             console.info("deu bom");
             $("#album_" + id).hide();
@@ -19,7 +19,7 @@ app.controller('AlbunsController', function ($scope, $http) {
     var buscarAlbuns = function () {
         $http({
             method: 'GET',
-            url: 'http://172.16.2.7:8080/albuns'
+            url: host + '/albuns'
         }).then(function successCallback(response) {
             $scope.albuns = response.data;
         }, function errorCallback(response) {
@@ -32,7 +32,7 @@ app.controller('AlbunsController', function ($scope, $http) {
         if ($scope.idAlbum == null) {
             $http({
                 method: 'POST',
-                url: 'http://172.16.2.7:8080/albuns',
+                url: host + '/albuns',
                 data: { 'nome': $scope.nomeDoAlbum }
             }).then(function successCallback(response) {
                 alert("sucesso!!"),
@@ -47,7 +47,7 @@ app.controller('AlbunsController', function ($scope, $http) {
         else {
             $http({
                 method: 'PUT',
-                url: 'http://172.16.2.7:8080/albuns/' + $scope.idAlbum,
+                url: host + '/albuns/' + $scope.idAlbum,
                 data: { 'nome': $scope.nomeDoAlbum },
             }).then(function successCallback(response) {
                 alert("sucesso!!"),

@@ -1,23 +1,25 @@
-app.controller('ImagensController', function($scope, $http) {
+app.controller('ImagensController', function($scope, $http, ImagensService, $rootScope) {
 
     //Carlos e Vitor dinamizando variaveis  
     $scope.imagens = new Object();
     $scope.albuns = new Object();
     $scope.nomeDoBotao = "Salvar Imagem";
+    $scope.url = "";
+    $scope.urlModal = "";
 
     $scope.buscarUmImagens = function () {
         $http({
             method: 'GET',
-            url: 'http://172.16.2.7:8080/imagens/' + $scope.pesquisar
+            url: host + '/imagens/' + $scope.pesquisar
 
         }).then(function successCallback(response) {
             if (response.data != null) {
-                $('#modalImagem').modal();
-                
-                $scope.objetao.url = response.data.url;
-                $scope.objetao.lista.push(response.data);
+                ImagensService.imagens = response.data.url;
+                $rootScope.$broadcast('topic', null);
+
+                $scope.imagens.push(response.data);
             } else {
-                alert("deu ruim");
+                console.info("deu ruim");
             }
         }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
             console.info("deu ruim");
@@ -27,7 +29,7 @@ app.controller('ImagensController', function($scope, $http) {
     var buscarImagens = function() {
         $http({
             method: 'GET',
-            url: 'http://172.16.2.7:8080/imagens'
+            url: host + '/imagens'
         }).then(function successCallback(response) {
             $scope.imagens = response.data;
         }, function errorCallback(response) {
@@ -38,7 +40,7 @@ app.controller('ImagensController', function($scope, $http) {
     var buscarAlbuns = function() {
         $http({
             method: 'GET',
-            url: 'http://172.16.2.7:8080/albuns'
+            url: host + '/albuns'
         }).then(function successCallback(response) {
             $scope.albuns = response.data;
         }, function errorCallback(response) {
@@ -49,7 +51,7 @@ app.controller('ImagensController', function($scope, $http) {
     $scope.remover = function(id) {
         $http({
             method: 'DELETE',
-            url: 'http://172.16.2.7:8080/imagens/' + id
+            url: host + '/imagens/' + id
         }).then(function successCallback(response) {
             $("#imagem_" + id).hide();
         }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
@@ -63,10 +65,10 @@ app.controller('ImagensController', function($scope, $http) {
         if ($scope.idImagem == null) {
             $http({
                 method: 'POST',
-                url: 'http://172.16.2.7:8080/imagens',
+                url: host + '/imagens',
                 data: { 'url': $scope.url }
             }).then(function successCallback(response) {
-                alert("sucesso!!"),
+                console.info("sucesso!!"),
                     buscarImagens(),
                     $scope.url = "";
                 //$scope.nomeImagem = "Salvar Imagem";
@@ -76,10 +78,10 @@ app.controller('ImagensController', function($scope, $http) {
         } else {
             $http({
                 method: 'PUT',
-                url: 'http://172.16.2.7:8080/imagens/' + $scope.idImagem,
+                url: host + '/imagens/' + $scope.idImagem,
                 data: { 'url': $scope.url }
             }).then(function successCallback(response) {
-                alert("sucesso!!"),
+                console.info("sucesso!!"),
                     buscarImagens(),
                     $scope.url = "";
                 // $scope.nomeImagem = "Salvar Imagem";
@@ -101,10 +103,15 @@ app.controller('ImagensController', function($scope, $http) {
         $scope.urlModal = imagem.url;
     }
 
+    $scope.$on('topic', function (event, objetoGlogal) { 
+        //$scope.url = ImagensService.url;
+        //$scope.urlModal = ImagensService.url;
+        $scope.imagens = ImagensService.imagens;
+    });
+
     var init = function() {
         buscarImagens();
         buscarAlbuns();
-        dataDismiss();
     }
 
     init();
