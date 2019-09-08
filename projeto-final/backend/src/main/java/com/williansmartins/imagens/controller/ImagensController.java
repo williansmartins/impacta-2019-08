@@ -1,6 +1,7 @@
 package com.williansmartins.imagens.controller;
 
 import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.williansmartins.imagens.model.Imagem;
 import com.williansmartins.imagens.repository.ImagensRepository;
+
 
 @RestController
 @RequestMapping("/imagens")
@@ -31,6 +33,12 @@ public class ImagensController {
 	public Optional<Imagem> buscarUm(@PathVariable Long id) {
 		System.out.println("buscando imagem com id: " + id);
 		return repository.findById(id);
+	}
+
+	@GetMapping("/{url}")
+	public List<Imagem> buscar(@PathVariable String url) {
+		System.out.println("buscando imagem com url: " + url);
+		return repository.findAllByUrl(url);
 	}
 	
 	@GetMapping("/tag/{tags}")
