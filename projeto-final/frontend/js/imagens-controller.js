@@ -10,11 +10,11 @@ app.controller('ImagensController', function($scope, $http, ImagensService, $roo
     $scope.buscarUmImagens = function () {
         $http({
             method: 'GET',
-            url: host + '/imagens/' + $scope.pesquisar
+            url: host + '/imagens/url/' + $scope.pesquisar
 
         }).then(function successCallback(response) {
             if (response.data != null) {
-                ImagensService.imagens = response.data.url;
+                ImagensService.imagens = response.data;
                 $rootScope.$broadcast('topic', null);
 
                 $scope.imagens.push(response.data);
@@ -104,8 +104,6 @@ app.controller('ImagensController', function($scope, $http, ImagensService, $roo
     }
 
     $scope.$on('topic', function (event, objetoGlogal) { 
-        //$scope.url = ImagensService.url;
-        //$scope.urlModal = ImagensService.url;
         $scope.imagens = ImagensService.imagens;
     });
 

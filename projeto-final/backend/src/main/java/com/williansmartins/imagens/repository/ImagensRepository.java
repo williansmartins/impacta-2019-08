@@ -6,5 +6,5 @@ import com.williansmartins.imagens.model.Imagem;
 import java.util.List;
 
 public interface ImagensRepository extends CrudRepository<Imagem, Long> {
-	public List<Imagem>findAllByUrl(String url);
+	public List<Imagem>findAllByUrlIgnoreCaseContaining(String url);
 }

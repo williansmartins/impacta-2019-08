@@ -35,10 +35,10 @@ public class ImagensController {
 		return repository.findById(id);
 	}
 
-	@GetMapping("/{url}")
+	@GetMapping("/url/{url}")
 	public List<Imagem> buscar(@PathVariable String url) {
 		System.out.println("buscando imagem com url: " + url);
-		return repository.findAllByUrl(url);
+		return repository.findAllByUrlIgnoreCaseContaining(url);
 	}
 	
 	@GetMapping("/tag/{tags}")
