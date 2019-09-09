@@ -62,6 +62,10 @@
     width: 15px;
 }
 
+#imagens .checkbox{
+    position: absolute;
+    right: 0px;
+}
 #imagens .imagemExibindo {
     max-width: 100%;
     max-height: 100%;
