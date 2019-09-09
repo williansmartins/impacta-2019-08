@@ -11,6 +11,10 @@
     position: relative;
 }
 
+#albuns .form-group{
+    height: 40px;
+}
+
 #albuns .artigo-album:hover{
     background-color: #a3a3a3;
     cursor: pointer;
