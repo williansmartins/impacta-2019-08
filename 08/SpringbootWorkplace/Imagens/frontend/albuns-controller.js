@@ -1,7 +1,7 @@
 app.controller('AlbunsController', function($scope, $http) {
     $scope.albuns=new Object(); 
       
-
+    
 
     $scope.remover = function(id){
         $http({
@@ -9,19 +9,17 @@ app.controller('AlbunsController', function($scope, $http) {
             url: 'http://localhost:8080/albuns/' + id
         }).then(function successCallback(response) {
             console.info("deu bom");
-            $scope.albuns = response.data;
-        }, function errorCallback(response) {
+            $("#album_" + id).hide();
+        }, function errorCallback(data, status, headers, config, statusText , xhrStatus ) {
             console.info("deu ruim");
         });
     }
 
-
-    var buscarImagens = function(){
+    var buscarAlbuns = function(){
         $http({
             method: 'GET',
             url: 'http://localhost:8080/albuns'
         }).then(function successCallback(response) {
-            console.info("deu bom");
             $scope.albuns = response.data;
         }, function errorCallback(response) {
             console.info("deu ruim");
@@ -29,8 +27,9 @@ app.controller('AlbunsController', function($scope, $http) {
     }
 
     var init = function(){
-        buscarImagens();
+        buscarAlbuns();
     }
-   init();
+
+    init();
 
 });

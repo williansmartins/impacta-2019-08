@@ -1,8 +1,7 @@
 app.controller('ImagensController', function($scope, $http, ImagensService, $rootScope) {
-
-    //Carlos e Vitor dinamizando variaveis  
     $scope.imagens = new Object();
     $scope.albuns = new Object();
+    $scope.idImagem;
     $scope.nomeDoBotao = "Salvar Imagem";
     $scope.url = "";
     $scope.urlModal = "";
@@ -47,6 +46,18 @@ app.controller('ImagensController', function($scope, $http, ImagensService, $roo
             console.info("deu ruim");
         });
     }
+    $scope.buscarUm = function (id) {
+        $http({
+            method: 'GET',
+            url: 'http://172.16.2.7:8080/albuns/' + id,
+            data: { 'id': id }
+        }).then(function successCallback(response) {
+            $scope.albuns = response.data;
+        }, function errorCallback(response) {
+            console.info("deu ruim");
+        });
+    }
+
 
     $scope.remover = function(id) {
         $http({
@@ -96,8 +107,43 @@ app.controller('ImagensController', function($scope, $http, ImagensService, $roo
         console.info(imagem);
         $scope.url = imagem.url;
         $scope.idImagem = imagem.id;
-        $scope.nomeDoBotao = "Editar Imagem";
     }
+
+    $scope.procurarImagem = function (id) {
+        console.info(id);
+        $scope.albuns.forEach(album => {
+
+            album.checkbox = false;
+            album.imagens.forEach(imagem => {
+                if (id == imagem.id) {
+                    console.info(album.nome);
+                    console.info(imagem);
+                    console.info("encontrei");
+                    album.checkbox = true;
+                }
+            });
+        });
+    }
+
+    $scope.pegarId = function (id) {
+        $scope.idImagem = id;
+        console.info($scope.idImagem);
+        return id;
+    }
+
+    $scope.adicionarImagem = function (albumId) {
+        $http({
+            method: 'PUT',
+            url: 'http://172.16.2.7:8080/albuns/' + albumId + '/adicionar',
+            data: { 'id': $scope.idImagem }
+        }).then(function successCallback(response) {
+            
+            console.info("Sucesso");
+        }, function errorCallback(data, status, headers, config, statusText, xhrStatus) {
+            console.info("deu ruim");
+        });
+    }
+
     $scope.ampliar = function(imagem) {
         console.info(imagem);
         $scope.urlModal = imagem.url;
@@ -110,6 +156,7 @@ app.controller('ImagensController', function($scope, $http, ImagensService, $roo
     var init = function() {
         buscarImagens();
         buscarAlbuns();
+        $scope.nomeDoBotao = "Editar Imagem";
     }
 
     init();

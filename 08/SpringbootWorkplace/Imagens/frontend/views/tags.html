@@ -1,9 +1,12 @@
 <section id="tags">
     <h2>Tags</h2>
-    <article ng-repeat="tag in tags"></article>
-    <a href="#" class="tag">
-        <span>familia</span>
-        <span>x</span>
-   
-    </a>
+    <article ng-repeat="tag in tags">
+        <a href="#" class="tag">
+            <span>{{tag.tag}}</span>
+            <span>x</span>
+        </a>
+    </article>
+    
+    
+    <hr>
 </section>
