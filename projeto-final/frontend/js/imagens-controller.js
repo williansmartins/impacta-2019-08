@@ -104,7 +104,6 @@ app.controller('ImagensController', function($scope, $http) {
     var init = function() {
         buscarImagens();
         buscarAlbuns();
-        dataDismiss();
     }
 
     init();
