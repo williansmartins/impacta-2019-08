@@ -1,25 +1,27 @@
-#imagens{
+#imagens {
     overflow: hidden;
+    width: 100%;
 }
 
-#imagens .titulo{
+#imagens .titulo {
     top: 18px;
 }
 
-#imagens .url{
+#imagens .url {
     width: 200px;
     float: left;
 }
-#imagens .nova-imagem{
+
+#imagens .nova-imagem {
     float: left;
     margin-left: 5px;
 }
 
-#imagens .form-group{
+#imagens .form-group {
     height: 40px;
 }
 
-#imagens .artigo-imagem{
+#imagens .artigo-imagem {
     overflow: hidden;
     margin: 10px;
     float: left;
@@ -28,23 +30,23 @@
     width: 100px;
 }
 
-#imagens .artigo-imagem .foto{
+#imagens .artigo-imagem .foto {
     width: 100%;
 }
 
-#imagens .artigo-imagem .foto:hover{
+#imagens .artigo-imagem .foto:hover {
     filter: opacity(50%);
 }
 
-#imagens #imagem .artigo-imagem:hover{
+#imagens #imagem .artigo-imagem:hover {
     cursor: pointer;
 }
 
-#imagens .artigo-imagem:hover{
+#imagens .artigo-imagem:hover {
     cursor: pointer;
 }
 
-#imagens .add{
+#imagens .add {
     color: gray;
     position: absolute;
     right: 8px;
@@ -52,14 +54,36 @@
     text-decoration: none;
 }
 
-#imagens article:hover .add{
+#imagens article:hover .add {
     display: block;
 }
-#imagens .add img{
+
+#imagens .add img {
     width: 15px;
 }
 
 #imagens .checkbox{
     position: absolute;
     right: 0px;
+}
+#imagens .imagemExibindo {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#modalImagens .modal-body {
+    display: center;
+    max-height: 1000px;
+    min-width: 10%;
+    text-align: center;
+    margin: 0px auto;
+}
+
+#modalImagem .modal-dialog {
+    max-width: 800px;
+}
+
+#modalImagem.modal {
+    width: unset;
+    overflow: hidden;
 }
